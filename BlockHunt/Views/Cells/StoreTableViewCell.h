@@ -13,5 +13,7 @@
 
 @property (nonatomic, strong) Store *store;
 // Checkin Action Block
++ (NSString*)reuseIdentifier;
 
 @end
+
