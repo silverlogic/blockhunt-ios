@@ -19,6 +19,7 @@
 		631C68001C53E7050087C7EF /* BlockHuntUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67FF1C53E7050087C7EF /* BlockHuntUITests.m */; };
 		6B8067111C53F4E700572346 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067101C53F4E700572346 /* Store.m */; };
 		6B8067141C53F57500572346 /* AbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067131C53F57500572346 /* AbstractModel.m */; };
+		6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8067161C53FDEA00572346 /* MapKit.framework */; };
 		DE4D6C491DC966630E9ECC6C /* libPods-BlockHuntTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DE67D0E47C815D7E41CDD0 /* libPods-BlockHuntTests.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		6B8067121C53F52C00572346 /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Store.h; path = BlockHunt/Models/Store.h; sourceTree = "<group>"; };
 		6B8067131C53F57500572346 /* AbstractModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractModel.m; path = BlockHunt/Models/AbstractModel.m; sourceTree = "<group>"; };
 		6B8067151C53F58C00572346 /* AbstractModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AbstractModel.h; path = BlockHunt/Models/AbstractModel.h; sourceTree = "<group>"; };
+		6B8067161C53FDEA00572346 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7FAD0C26E270AC144A51AD57 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8B9148DBD378FB0605F9B551 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B757F07D489D47F102D9DA /* Pods-BlockHuntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockHuntTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockHuntTests/Pods-BlockHuntTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */,
 				5494FBD9EC99CE59821D163D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +193,7 @@
 		E46012AB0B2065ACD99F7493 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B8067161C53FDEA00572346 /* MapKit.framework */,
 				8B9148DBD378FB0605F9B551 /* libPods.a */,
 				F1DE67D0E47C815D7E41CDD0 /* libPods-BlockHuntTests.a */,
 			);

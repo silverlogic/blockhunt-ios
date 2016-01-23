@@ -7,6 +7,8 @@
 //
 
 #import "MapViewController.h"
+#import <MapKit/MapKit.h>
+#import "Store.h"
 
 @interface MapViewController ()
 
