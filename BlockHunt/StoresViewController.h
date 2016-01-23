@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapViewController : UIViewController
+@interface StoresViewController : UIViewController
 
 @property (nonatomic, strong) NSArray *storeList; //stores to show in the map
 

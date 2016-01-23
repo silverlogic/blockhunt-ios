@@ -10,7 +10,7 @@
 		5494FBD9EC99CE59821D163D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9148DBD378FB0605F9B551 /* libPods.a */; };
 		631C67D91C53E7050087C7EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67D81C53E7050087C7EF /* main.m */; };
 		631C67DC1C53E7050087C7EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67DB1C53E7050087C7EF /* AppDelegate.m */; };
-		631C67DF1C53E7050087C7EF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67DE1C53E7050087C7EF /* MapViewController.m */; };
+		631C67DF1C53E7050087C7EF /* StoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67DE1C53E7050087C7EF /* StoresViewController.m */; };
 		631C67E21C53E7050087C7EF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67E11C53E7050087C7EF /* SecondViewController.m */; };
 		631C67E51C53E7050087C7EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631C67E31C53E7050087C7EF /* Main.storyboard */; };
 		631C67E71C53E7050087C7EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631C67E61C53E7050087C7EF /* Assets.xcassets */; };
@@ -48,8 +48,8 @@
 		631C67D81C53E7050087C7EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		631C67DA1C53E7050087C7EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		631C67DB1C53E7050087C7EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		631C67DD1C53E7050087C7EF /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		631C67DE1C53E7050087C7EF /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		631C67DD1C53E7050087C7EF /* StoresViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoresViewController.h; sourceTree = "<group>"; };
+		631C67DE1C53E7050087C7EF /* StoresViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoresViewController.m; sourceTree = "<group>"; };
 		631C67E01C53E7050087C7EF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		631C67E11C53E7050087C7EF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		631C67E41C53E7050087C7EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 			children = (
 				631C67DA1C53E7050087C7EF /* AppDelegate.h */,
 				631C67DB1C53E7050087C7EF /* AppDelegate.m */,
-				631C67DD1C53E7050087C7EF /* MapViewController.h */,
-				631C67DE1C53E7050087C7EF /* MapViewController.m */,
+				631C67DD1C53E7050087C7EF /* StoresViewController.h */,
+				631C67DE1C53E7050087C7EF /* StoresViewController.m */,
 				631C67E01C53E7050087C7EF /* SecondViewController.h */,
 				631C67E11C53E7050087C7EF /* SecondViewController.m */,
 				631C67E31C53E7050087C7EF /* Main.storyboard */,
@@ -424,7 +424,7 @@
 			files = (
 				631C67E21C53E7050087C7EF /* SecondViewController.m in Sources */,
 				631C67DC1C53E7050087C7EF /* AppDelegate.m in Sources */,
-				631C67DF1C53E7050087C7EF /* MapViewController.m in Sources */,
+				631C67DF1C53E7050087C7EF /* StoresViewController.m in Sources */,
 				6B80671C1C54077400572346 /* StoreTableViewCell.m in Sources */,
 				6B8067141C53F57500572346 /* AbstractModel.m in Sources */,
 				6B8067111C53F4E700572346 /* Store.m in Sources */,

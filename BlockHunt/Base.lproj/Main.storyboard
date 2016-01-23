@@ -11,7 +11,7 @@
         <!--Map-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Map" id="9pv-A4-QxB" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController title="Map" id="9pv-A4-QxB" customClass="StoresViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="300" width="600" height="251"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storeCell" id="lSE-jA-w1a" userLabel="Store Table View Cell" customClass="StoreTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreTableViewCell" id="lSE-jA-w1a" userLabel="Store Table View Cell" customClass="StoreTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lSE-jA-w1a" id="LiN-tA-xpb">
@@ -86,6 +86,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="Zo4-oO-YC5"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="gZW-K4-DLz"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -103,6 +107,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="mapView" destination="fsc-R9-RjK" id="QXJ-3j-VPe"/>
+                        <outlet property="tableView" destination="duT-GR-myh" id="5jt-sb-zOP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -164,6 +169,10 @@
         <scene sceneID="UDD-Nz-EB9">
             <objects>
                 <viewController id="CLd-hv-Vyg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8aM-Fl-ftN"/>
+                        <viewControllerLayoutGuide type="bottom" id="1TU-Lf-9lL"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3uM-0Z-9e8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

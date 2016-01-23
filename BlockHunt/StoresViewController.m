@@ -6,17 +6,19 @@
 //  Copyright © 2016 SilverLogic. All rights reserved.
 //
 
-#import "MapViewController.h"
+#import "StoresViewController.h"
 #import <MapKit/MapKit.h>
 #import "Store.h"
 #import "LocationHelper.h"
+#import "StoreTableViewCell.h"
 
-@interface MapViewController ()
+@interface StoresViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation MapViewController
+@implementation StoresViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +26,7 @@
 	// self.list = list of stores
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centerMap) name:kLocationUpdateNotification object:nil];
+	self.storeList = [Store mockStores];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,5 +45,26 @@
 		[self.mapView setRegion:region animated:YES];
 	});
 }
+
+
+#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	// Return the number of sections.
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	// Return the number of rows in the section.
+	return self.storeList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	 StoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[StoreTableViewCell reuseIdentifier] forIndexPath:indexPath];
+ 
+	// Configure the cell...
+	cell.store = self.storeList[indexPath.row];
+	return cell;
+}
+
 
 @end

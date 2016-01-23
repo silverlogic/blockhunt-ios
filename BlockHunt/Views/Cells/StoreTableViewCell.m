@@ -10,7 +10,7 @@
 #import "StoreTableViewCell.h"
 #import "Store.h"
 
-static NSString *const _reuseIdentifier = @"TableViewCell";
+static NSString *const _reuseIdentifier = @"StoreTableViewCell";
 
 @interface StoreTableViewCell ()
 @property (strong, nonatomic) IBOutlet UIImageView *storeImageView;
@@ -20,6 +20,10 @@ static NSString *const _reuseIdentifier = @"TableViewCell";
 @end
 
 @implementation StoreTableViewCell
+
++ (NSString*)reuseIdentifier {
+	return _reuseIdentifier;
+}
 
 #pragma mark - Setters
 - (void)setStore:(Store *)store {
