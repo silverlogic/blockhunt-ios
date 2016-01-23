@@ -5,6 +5,7 @@ inhibit_all_warnings!
 link_with 'BlockHunt'
 
 pod 'LocationHelper'
+pod 'QRCodeReaderViewController'
 
 target :'BlockHuntTests', :exclusive => true do
 	platform :ios, '7.0'
