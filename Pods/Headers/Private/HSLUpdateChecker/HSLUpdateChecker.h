@@ -1,0 +1,1 @@
+../../../HSLUpdateChecker/Classes/HSLUpdateChecker.h

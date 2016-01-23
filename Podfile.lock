@@ -1,0 +1,144 @@
+PODS:
+  - AFNetworking (1.3.4)
+  - Bolts (1.6.0):
+    - Bolts/AppLinks (= 1.6.0)
+    - Bolts/Tasks (= 1.6.0)
+  - Bolts/AppLinks (1.6.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.6.0)
+  - BPXLUUIDHandler (0.0.1)
+  - CocoaAsyncSocket (7.4.2)
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
+  - Crashlytics (3.6.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.4)
+  - FBSDKCoreKit (4.9.1):
+    - Bolts (~> 1.5)
+  - FBSDKLoginKit (4.9.1):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.9.1):
+    - FBSDKCoreKit
+  - GRKAlertBlocks (1.0.2)
+  - HSLUpdateChecker (1.0.2)
+  - ISO8601DateFormatterValueTransformer (0.6.1):
+    - RKValueTransformers (~> 1.1.0)
+  - KIF (3.3.1):
+    - KIF/Core (= 3.3.1)
+  - KIF-Kiwi (0.2.5):
+    - KIF (~> 3.0)
+    - Kiwi (~> 2.0)
+  - KIF/Core (3.3.1)
+  - Kiwi (2.4.0)
+  - LocationHelper (0.0.1)
+  - MBProgressHUD (0.9.2)
+  - MGSwipeTableCell (1.5.3)
+  - MZTimerLabel (0.5.4)
+  - PaperTrailLumberjack (1.0.3):
+    - CocoaAsyncSocket
+    - CocoaLumberjack (~> 2.2.0)
+  - QuickDialog (1.1.0):
+    - QuickDialog/Core (= 1.1.0)
+  - QuickDialog/Core (1.1.0)
+  - QuickDialog/Extras (1.1.0):
+    - QuickDialog/Core
+  - RestKit (0.26.0):
+    - RestKit/Core (= 0.26.0)
+  - RestKit/Core (0.26.0):
+    - RestKit/CoreData
+    - RestKit/Network
+    - RestKit/ObjectMapping
+  - RestKit/CoreData (0.26.0):
+    - RestKit/ObjectMapping
+  - RestKit/Network (0.26.0):
+    - AFNetworking (~> 1.3.0)
+    - RestKit/ObjectMapping
+    - RestKit/Support
+    - SOCKit
+  - RestKit/ObjectMapping (0.26.0):
+    - ISO8601DateFormatterValueTransformer (~> 0.6.1)
+    - RestKit/Support
+    - RKValueTransformers (~> 1.1.0)
+  - RestKit/Support (0.26.0):
+    - TransitionKit (~> 2.2)
+  - RKCLLocationValueTransformer (1.1.0):
+    - RKValueTransformers (~> 1.1.0)
+  - RKValueTransformers (1.1.2)
+  - SOCKit (1.1)
+  - SwipeView (1.3.2)
+  - TBAlertController (2.0.2)
+  - TransitionKit (2.2.1)
+  - YLMoment (0.6.0)
+
+DEPENDENCIES:
+  - BPXLUUIDHandler (~> 0.0)
+  - CocoaLumberjack (= 2.2)
+  - Crashlytics (~> 3.3)
+  - Fabric (~> 1.5)
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
+  - GRKAlertBlocks (~> 1.0)
+  - HSLUpdateChecker (~> 1.0.2)
+  - KIF-Kiwi
+  - LocationHelper (~> 0.0.1)
+  - MBProgressHUD (~> 0.8)
+  - MGSwipeTableCell (~> 1.5)
+  - MZTimerLabel
+  - PaperTrailLumberjack (from `https://github.com/greenbits/papertrail-lumberjack-ios.git`)
+  - QuickDialog (~> 1.0)
+  - QuickDialog/Extras (~> 1.0)
+  - RestKit (~> 0.24)
+  - RKCLLocationValueTransformer (~> 1.1)
+  - SwipeView
+  - TBAlertController (~> 2.0)
+  - YLMoment (~> 0.5)
+
+EXTERNAL SOURCES:
+  PaperTrailLumberjack:
+    :git: https://github.com/greenbits/papertrail-lumberjack-ios.git
+
+CHECKOUT OPTIONS:
+  PaperTrailLumberjack:
+    :commit: b29cd5e6fdd6fbc144a944472494ddc632363f51
+    :git: https://github.com/greenbits/papertrail-lumberjack-ios.git
+
+SPEC CHECKSUMS:
+  AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  BPXLUUIDHandler: fa98b898a44ee08306e59b7181e90d59c9a53b95
+  CocoaAsyncSocket: f5783bdedd232d91b89769bc4b5a1580aed518ad
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
+  Fabric: ed41fd62173c6bdea24ab02c9d7707161eabb750
+  FBSDKCoreKit: aee20b6d9855f15b618d4fddd1a5ad45f5a4a59d
+  FBSDKLoginKit: ec22dc49bd372b064e93d6773df4ffefb3a552a2
+  FBSDKShareKit: b8c8ef0ed173f9fc1b3c8df384a0202ce53008d4
+  GRKAlertBlocks: dde456270f78abd341e3fdc520a3db96eb6530fb
+  HSLUpdateChecker: 68521c62e4d67364943ebc3ce469cafca2e7c982
+  ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
+  KIF: ff9f0e585503871bcd096937cc760081d770c5e2
+  KIF-Kiwi: f0fd0488602bdc92fcb1908906ce9e2fa18f440e
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  LocationHelper: 8dfa83c66ae9ca7735b34dcb21a750a6e06d402a
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MGSwipeTableCell: 5ae3b9a15efda26b201adc8676b24040febe6ff6
+  MZTimerLabel: cd9bfb9304540ef2a9e163384fca9c978f0dbf83
+  PaperTrailLumberjack: 967b52c730817b9807a6735e0a6e54bcf917e1b6
+  QuickDialog: 6954450c4c2d003a89fbfee48ec8fa4695436b01
+  RestKit: 112fba5bd1f97598aac0db7981863d5fdc0263a2
+  RKCLLocationValueTransformer: 2cf0ea0fb7cd4bc70c56834fb92abc717c66f982
+  RKValueTransformers: 66ac5e4f077fdbe3496e792d89eeff4c3eb67701
+  SOCKit: c7376ac262bea9115b8f749358f762522a47d392
+  SwipeView: bd67cfaf7760c036438446b3ccb28a3b84fce009
+  TBAlertController: 51681b1fd9d62be61cefe44579747f7d6e2c1f2a
+  TransitionKit: 9ceccda4cd0cdc0a05ef85eb235e5a3292c3c250
+  YLMoment: a342e85269150756105901c4b701070154f82c16
+
+COCOAPODS: 0.38.0
