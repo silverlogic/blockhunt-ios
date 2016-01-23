@@ -25,7 +25,7 @@ static NSString *const _reuseIdentifier = @"TableViewCell";
 - (void)setStore:(Store *)store {
 	_store = store;
 	self.storeNameLabel.text = self.store.storeName;
-	self.bountyAmount.text = self.store.bountyAmount;
+	self.bountyAmount.text = [NSString stringWithFormat:@"%f",self.store.bountyAmount];
 }
 
 @end
