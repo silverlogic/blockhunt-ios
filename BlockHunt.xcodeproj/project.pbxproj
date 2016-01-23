@@ -10,13 +10,16 @@
 		5494FBD9EC99CE59821D163D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9148DBD378FB0605F9B551 /* libPods.a */; };
 		631C67D91C53E7050087C7EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67D81C53E7050087C7EF /* main.m */; };
 		631C67DC1C53E7050087C7EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67DB1C53E7050087C7EF /* AppDelegate.m */; };
-		631C67DF1C53E7050087C7EF /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67DE1C53E7050087C7EF /* FirstViewController.m */; };
+		631C67DF1C53E7050087C7EF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67DE1C53E7050087C7EF /* MapViewController.m */; };
 		631C67E21C53E7050087C7EF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67E11C53E7050087C7EF /* SecondViewController.m */; };
 		631C67E51C53E7050087C7EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631C67E31C53E7050087C7EF /* Main.storyboard */; };
 		631C67E71C53E7050087C7EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631C67E61C53E7050087C7EF /* Assets.xcassets */; };
 		631C67EA1C53E7050087C7EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631C67E81C53E7050087C7EF /* LaunchScreen.storyboard */; };
 		631C67F51C53E7050087C7EF /* BlockHuntTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67F41C53E7050087C7EF /* BlockHuntTests.m */; };
 		631C68001C53E7050087C7EF /* BlockHuntUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67FF1C53E7050087C7EF /* BlockHuntUITests.m */; };
+		6B8067111C53F4E700572346 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067101C53F4E700572346 /* Store.m */; };
+		6B8067141C53F57500572346 /* AbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067131C53F57500572346 /* AbstractModel.m */; };
+		6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8067161C53FDEA00572346 /* MapKit.framework */; };
 		DE4D6C491DC966630E9ECC6C /* libPods-BlockHuntTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DE67D0E47C815D7E41CDD0 /* libPods-BlockHuntTests.a */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +46,8 @@
 		631C67D81C53E7050087C7EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		631C67DA1C53E7050087C7EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		631C67DB1C53E7050087C7EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		631C67DD1C53E7050087C7EF /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		631C67DE1C53E7050087C7EF /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		631C67DD1C53E7050087C7EF /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		631C67DE1C53E7050087C7EF /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		631C67E01C53E7050087C7EF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		631C67E11C53E7050087C7EF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		631C67E41C53E7050087C7EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +60,11 @@
 		631C67FB1C53E7050087C7EF /* BlockHuntUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockHuntUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		631C67FF1C53E7050087C7EF /* BlockHuntUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockHuntUITests.m; sourceTree = "<group>"; };
 		631C68011C53E7050087C7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B8067101C53F4E700572346 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Store.m; path = BlockHunt/Models/Store.m; sourceTree = "<group>"; };
+		6B8067121C53F52C00572346 /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Store.h; path = BlockHunt/Models/Store.h; sourceTree = "<group>"; };
+		6B8067131C53F57500572346 /* AbstractModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractModel.m; path = BlockHunt/Models/AbstractModel.m; sourceTree = "<group>"; };
+		6B8067151C53F58C00572346 /* AbstractModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AbstractModel.h; path = BlockHunt/Models/AbstractModel.h; sourceTree = "<group>"; };
+		6B8067161C53FDEA00572346 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7FAD0C26E270AC144A51AD57 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8B9148DBD378FB0605F9B551 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B757F07D489D47F102D9DA /* Pods-BlockHuntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockHuntTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockHuntTests/Pods-BlockHuntTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */,
 				5494FBD9EC99CE59821D163D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,14 +138,15 @@
 			children = (
 				631C67DA1C53E7050087C7EF /* AppDelegate.h */,
 				631C67DB1C53E7050087C7EF /* AppDelegate.m */,
-				631C67DD1C53E7050087C7EF /* FirstViewController.h */,
-				631C67DE1C53E7050087C7EF /* FirstViewController.m */,
+				631C67DD1C53E7050087C7EF /* MapViewController.h */,
+				631C67DE1C53E7050087C7EF /* MapViewController.m */,
 				631C67E01C53E7050087C7EF /* SecondViewController.h */,
 				631C67E11C53E7050087C7EF /* SecondViewController.m */,
 				631C67E31C53E7050087C7EF /* Main.storyboard */,
 				631C67E61C53E7050087C7EF /* Assets.xcassets */,
 				631C67E81C53E7050087C7EF /* LaunchScreen.storyboard */,
 				631C67EB1C53E7050087C7EF /* Info.plist */,
+				6B80670F1C53F47A00572346 /* Models */,
 				631C67D71C53E7050087C7EF /* Supporting Files */,
 			);
 			path = BlockHunt;
@@ -168,9 +178,22 @@
 			path = BlockHuntUITests;
 			sourceTree = "<group>";
 		};
+		6B80670F1C53F47A00572346 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B8067101C53F4E700572346 /* Store.m */,
+				6B8067121C53F52C00572346 /* Store.h */,
+				6B8067131C53F57500572346 /* AbstractModel.m */,
+				6B8067151C53F58C00572346 /* AbstractModel.h */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		E46012AB0B2065ACD99F7493 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B8067161C53FDEA00572346 /* MapKit.framework */,
 				8B9148DBD378FB0605F9B551 /* libPods.a */,
 				F1DE67D0E47C815D7E41CDD0 /* libPods-BlockHuntTests.a */,
 			);
@@ -376,7 +399,9 @@
 			files = (
 				631C67E21C53E7050087C7EF /* SecondViewController.m in Sources */,
 				631C67DC1C53E7050087C7EF /* AppDelegate.m in Sources */,
-				631C67DF1C53E7050087C7EF /* FirstViewController.m in Sources */,
+				631C67DF1C53E7050087C7EF /* MapViewController.m in Sources */,
+				6B8067141C53F57500572346 /* AbstractModel.m in Sources */,
+				6B8067111C53F4E700572346 /* Store.m in Sources */,
 				631C67D91C53E7050087C7EF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
