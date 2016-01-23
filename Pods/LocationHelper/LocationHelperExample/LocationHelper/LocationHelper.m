@@ -83,11 +83,13 @@ static LocationHelper *sharedLocationHelper = nil;
         return authorizationStatus;
     }
     
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined){
-        authorizationStatus = YES;
-        return authorizationStatus;
-    }
-    
+	if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse ||
+		[CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways ||
+		[CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+		authorizationStatus = YES;
+		return authorizationStatus;
+	}
+	
     return authorizationStatus;
 }
 

@@ -20,6 +20,8 @@
 		6B8067111C53F4E700572346 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067101C53F4E700572346 /* Store.m */; };
 		6B8067141C53F57500572346 /* AbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067131C53F57500572346 /* AbstractModel.m */; };
 		6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8067161C53FDEA00572346 /* MapKit.framework */; };
+		6B80671C1C54077400572346 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B80671B1C54077400572346 /* StoreTableViewCell.m */; };
+		6B80671E1C54192600572346 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B80671D1C54192600572346 /* CoreLocation.framework */; };
 		DE4D6C491DC966630E9ECC6C /* libPods-BlockHuntTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DE67D0E47C815D7E41CDD0 /* libPods-BlockHuntTests.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,9 @@
 		6B8067131C53F57500572346 /* AbstractModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractModel.m; path = BlockHunt/Models/AbstractModel.m; sourceTree = "<group>"; };
 		6B8067151C53F58C00572346 /* AbstractModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AbstractModel.h; path = BlockHunt/Models/AbstractModel.h; sourceTree = "<group>"; };
 		6B8067161C53FDEA00572346 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6B80671A1C54075C00572346 /* StoreTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StoreTableViewCell.h; path = Views/Cells/StoreTableViewCell.h; sourceTree = "<group>"; };
+		6B80671B1C54077400572346 /* StoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreTableViewCell.m; path = Views/Cells/StoreTableViewCell.m; sourceTree = "<group>"; };
+		6B80671D1C54192600572346 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7FAD0C26E270AC144A51AD57 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8B9148DBD378FB0605F9B551 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B757F07D489D47F102D9DA /* Pods-BlockHuntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockHuntTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockHuntTests/Pods-BlockHuntTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B80671E1C54192600572346 /* CoreLocation.framework in Frameworks */,
 				6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */,
 				5494FBD9EC99CE59821D163D /* libPods.a in Frameworks */,
 			);
@@ -146,6 +152,7 @@
 				631C67E61C53E7050087C7EF /* Assets.xcassets */,
 				631C67E81C53E7050087C7EF /* LaunchScreen.storyboard */,
 				631C67EB1C53E7050087C7EF /* Info.plist */,
+				6B8067181C54067600572346 /* Views */,
 				6B80670F1C53F47A00572346 /* Models */,
 				631C67D71C53E7050087C7EF /* Supporting Files */,
 			);
@@ -190,9 +197,27 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		6B8067181C54067600572346 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B8067191C54068100572346 /* Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6B8067191C54068100572346 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6B80671A1C54075C00572346 /* StoreTableViewCell.h */,
+				6B80671B1C54077400572346 /* StoreTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		E46012AB0B2065ACD99F7493 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B80671D1C54192600572346 /* CoreLocation.framework */,
 				6B8067161C53FDEA00572346 /* MapKit.framework */,
 				8B9148DBD378FB0605F9B551 /* libPods.a */,
 				F1DE67D0E47C815D7E41CDD0 /* libPods-BlockHuntTests.a */,
@@ -400,6 +425,7 @@
 				631C67E21C53E7050087C7EF /* SecondViewController.m in Sources */,
 				631C67DC1C53E7050087C7EF /* AppDelegate.m in Sources */,
 				631C67DF1C53E7050087C7EF /* MapViewController.m in Sources */,
+				6B80671C1C54077400572346 /* StoreTableViewCell.m in Sources */,
 				6B8067141C53F57500572346 /* AbstractModel.m in Sources */,
 				6B8067111C53F4E700572346 /* Store.m in Sources */,
 				631C67D91C53E7050087C7EF /* main.m in Sources */,

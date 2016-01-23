@@ -12,8 +12,13 @@
 @interface Store : AbstractModel
 
 @property (nonatomic, strong) NSNumber *storeId;
-@property (nonatomic, copy) NSString *storeName;
+@property (nonatomic, strong) NSString *storeName;
 @property (nonatomic, strong) CLLocation *location;
-@property (nonatomic, copy) NSString *storeDescription;
+@property (nonatomic, strong) NSString *storeDescription;
+@property (nonatomic, assign) CGFloat bountyAmount;
+// add image for store image
+// add image for store category image
+
++ (NSArray*)mockStores;
 
 @end
