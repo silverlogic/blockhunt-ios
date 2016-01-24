@@ -23,6 +23,6 @@
 + (void)getUser:(User *)user success:(void (^)(User *user))success failure:(void (^)(NSError *error, NSHTTPURLResponse *response))failure;
 + (void)getStoresAroundLocation:(CLLocationCoordinate2D)coordinate success:(void (^)(NSArray *stores))success failure:(void (^)(NSError *error, NSHTTPURLResponse *response))failure;
 + (void)checkinWithCode:(NSString *)qrcode success:(void (^)(Checkin *checkin))success failure:(void (^)(NSError *error, NSHTTPURLResponse *response))failure;
-
++ (void)requestPayout:(CGFloat)amount toAddress:(NSString *)btcAddress success:(void (^)(void))success failure:(void (^)(NSError *error, NSHTTPURLResponse *response))failure;
 
 @end

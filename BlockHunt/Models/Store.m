@@ -9,7 +9,7 @@
 #import "Store.h"
 #import "LocationHelper.h"
 
-const CGFloat BTC_TO_BITS = 1000*1000;
+//const CGFloat BTC_TO_BITS = 1000*1000;
 
 @implementation Address
 
@@ -71,7 +71,7 @@ const CGFloat BTC_TO_BITS = 1000*1000;
 
 #pragma mark - Helpers
 - (NSString*)bountyAmount {
-    return [NSString stringWithFormat:@"%.0f bits", self.bounty * BTC_TO_BITS];
+    return [NSString stringWithFormat:@"%.0f bits", self.bounty * 1000*1000];
 }
 
 @end

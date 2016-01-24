@@ -41,6 +41,7 @@ static NSString *const kChangePasswordEndpoint = @"auth/change-password";
 static NSString *const kCurrentHunterEndpoint = @"hunter";
 static NSString *const kStoresEndpoint = @"stores";
 static NSString *const kCheckinsEndpoint = @"checkins?expand=store";
+static NSString *const kSendEndpoint = @"hunter/send-bitcoin";
 
 //////////////////////////////////
 // Shared Instance
@@ -124,6 +125,25 @@ typedef NS_ENUM(NSUInteger, PageSize) {
             _defaultFailureBlock(operation, error);
         }
     }];
+}
+
++(void)requestPayout:(CGFloat)amount toAddress:(NSString *)btcAddress success:(void (^)(void))success failure:(void (^)(NSError *, NSHTTPURLResponse *))failure {
+	NSDictionary *params = @{
+							 @"amount": @(amount),
+							 @"address": btcAddress
+							 };
+	
+	[[RKObjectManager sharedManager] postObject:nil path:kSendEndpoint parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+		if (success) {
+			success();
+		}
+	} failure:^(RKObjectRequestOperation *operation, NSError *error) {
+		if (failure) {
+			failure(error, operation.HTTPRequestOperation.response);
+		} else {
+			_defaultFailureBlock(operation, error);
+		}
+	}];
 }
 
 //+ (void)signUpUser:(User*)user success:(void (^)(User *user))success failure:(void (^)(NSError *error))failure {
@@ -323,7 +343,11 @@ typedef NS_ENUM(NSUInteger, PageSize) {
     
     /* STORES */
     RKResponseDescriptor *storesResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:storeResponseMapping method:RKRequestMethodGET pathPattern:kStoresEndpoint keyPath:kResults statusCodes:successStatusCodes];
-    
+	
+	/* REQUEST PAYOUT */
+	RKResponseDescriptor *requestPayoutResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:emptyResponseMapping method:RKRequestMethodPOST pathPattern:kSendEndpoint keyPath:kResults statusCodes:successStatusCodes];
+
+	
     // Add our descriptors to the manager
     [manager addResponseDescriptorsFromArray:@[
                                                error400Descriptor,
@@ -335,7 +359,8 @@ typedef NS_ENUM(NSUInteger, PageSize) {
                                             forgotPasswordResponseDescriptor,
                                                changePasswordResponseDescriptor,
                                                storesResponseDescriptor,
-											   checkinResponseDescriptor
+											   checkinResponseDescriptor,
+											   requestPayoutResponseDescriptor
                                                ]];
     
     /* ********************************************* */

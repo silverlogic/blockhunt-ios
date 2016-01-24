@@ -13,6 +13,8 @@
 #import "Checkin.h"
 #import "APIClient.h"
 #import "CheckinStatusView.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface CheckinViewController () <QRCodeReaderDelegate>
 
@@ -46,18 +48,20 @@
 - (void)scan {
 	if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
 		static QRCodeReaderViewController *qrReaderVC = nil;
-		QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
-		qrReaderVC = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
-		qrReaderVC.modalPresentationStyle = UIModalPresentationFormSheet;
-		qrReaderVC.delegate = self;
-		[qrReaderVC setCompletionWithBlock:^(NSString *resultAsString) {
-            if (resultAsString) {
-                [APIClient checkinWithCode:resultAsString success:^(Checkin *checkin) {
-                    [self hideStatusView:NO];
-                    self.checkinStatusView.checkin = checkin;
-                } failure:nil];
-            }
-		}];
+        if (!qrReaderVC) {
+            QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
+            qrReaderVC = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
+            qrReaderVC.modalPresentationStyle = UIModalPresentationFormSheet;
+            qrReaderVC.delegate = self;
+            [qrReaderVC setCompletionWithBlock:^(NSString *resultAsString) {
+                if (resultAsString) {
+                    [APIClient checkinWithCode:resultAsString success:^(Checkin *checkin) {
+                        [self hideStatusView:NO];
+                        self.checkinStatusView.checkin = checkin;
+                    } failure:nil];
+                }
+            }];
+        }
 		
 		[self presentViewController:qrReaderVC animated:YES completion:nil];
 	}

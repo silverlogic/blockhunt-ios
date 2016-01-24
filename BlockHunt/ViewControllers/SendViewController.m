@@ -8,6 +8,7 @@
 
 #import "SendViewController.h"
 #import "User.h"
+#import "APIClient.h"
 
 @interface SendViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *balanceAmount;
@@ -17,12 +18,34 @@
 
 @end
 
+/*
+ hunter/send-bitcoin
+ address: toAddress
+ amount: transferAmount
+ */
+
 @implementation SendViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.balanceAmount.text = [User currentUser].balanceAmount;
+}
+- (IBAction)sendPressed:(id)sender {
+	[APIClient requestPayout:self.transferAmount.text.floatValue / 1000.0 / 1000.0 toAddress:self.toAddress.text success:^{
+		//make alert "your bitcoins have been sent"
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Your Bits have been sent" message:@"Thank You!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+		//clear values
+        self.transferAmount.text = nil;
+        self.toAddress.text = nil;
+	} failure:nil];
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	[[self view] endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

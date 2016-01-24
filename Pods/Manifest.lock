@@ -10,6 +10,8 @@ PODS:
     - Bolts (~> 1.5)
   - FBSDKLoginKit (4.9.1):
     - FBSDKCoreKit
+  - FBSDKShareKit (4.9.1):
+    - FBSDKCoreKit
   - ISO8601DateFormatterValueTransformer (0.6.1):
     - RKValueTransformers (~> 1.1.0)
   - KIF (3.3.1):
@@ -48,6 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - FBSDKLoginKit (~> 4.9)
+  - FBSDKShareKit
   - KIF-Kiwi
   - LocationHelper
   - QRCodeReaderViewController
@@ -59,6 +62,7 @@ SPEC CHECKSUMS:
   Bolts: f52a250053bb517ca874523c3913776359ab3def
   FBSDKCoreKit: aee20b6d9855f15b618d4fddd1a5ad45f5a4a59d
   FBSDKLoginKit: ec22dc49bd372b064e93d6773df4ffefb3a552a2
+  FBSDKShareKit: b8c8ef0ed173f9fc1b3c8df384a0202ce53008d4
   ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
   KIF: ff9f0e585503871bcd096937cc760081d770c5e2
   KIF-Kiwi: f0fd0488602bdc92fcb1908906ce9e2fa18f440e
