@@ -16,14 +16,17 @@
 @property (strong, nonatomic) IBOutlet UILabel *bountyAmount;
 @property (strong, nonatomic) IBOutlet UILabel *balanceAmount;
 @property (strong, nonatomic) IBOutlet UIView *checkinStatusView;
+@property (assign, nonatomic) BOOL successfulCheckin;
 
 @end
 
 @implementation CheckinViewController
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	self.checkinStatusView.hidden = true;
 	[self scan];
 }
+
 
 - (void)scan {
 	if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
@@ -48,6 +51,7 @@
 		UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
 		[alert addAction:defaultAction];
 		[self presentViewController:alert animated:YES completion:nil];
+		self.checkinStatusView.hidden = true;
 	}
 }
 
@@ -60,15 +64,18 @@
 
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result {
 	[self dismissViewControllerAnimated:YES completion:^{
+		self.successfulCheckin = true;
 		UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"QRCodeReader" message:result preferredStyle:UIAlertControllerStyleAlert];
-		UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+		UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {self.checkinStatusView.hidden = false;}];
 		[alert addAction:defaultAction];
 		[self presentViewController:alert animated:YES completion:nil];
 	}];
 }
 
 - (void)readerDidCancel:(QRCodeReaderViewController *)reader {
+	self.successfulCheckin = false;
 	[self dismissViewControllerAnimated:YES completion:NULL];
+	self.checkinStatusView.hidden = true;
 }
 
 @end
