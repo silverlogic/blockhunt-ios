@@ -6,6 +6,8 @@ link_with 'BlockHunt'
 
 pod 'LocationHelper'
 pod 'QRCodeReaderViewController'
+pod 'RestKit', '~> 0.26'
+pod 'RKCLLocationValueTransformer', '~> 1.1'
 
 target :'BlockHuntTests', :exclusive => true do
 	platform :ios, '7.0'

@@ -9,25 +9,49 @@
 #import "Store.h"
 #import "LocationHelper.h"
 
+const CGFloat BTC_TO_BITS = 1000*1000;
+
 @implementation Store
+
++ (NSDictionary*)fieldMappings {
+    NSMutableDictionary *fieldMappings = [NSMutableDictionary dictionaryWithDictionary:[super fieldMappings]];
+    [fieldMappings addEntriesFromDictionary:@{
+                                              @"id": @"storeId",
+                                              @"name": @"name",
+                                              @"photo.url": @"imageUrl",
+                                              @"bounty": @"bounty",
+                                              @"distance": @"distance",
+                                              @"tagline": @"tagline"
+                                              }];
+    return fieldMappings;
+}
+
++ (UIImage*)placeholderImage {
+    return [UIImage imageNamed:@"placeholder-store"];
+}
 
 #pragma mark - Mock
 + (NSArray*)mockStores {
 	Store *store1 = [[Store alloc] init];
 	store1.storeId = @1;
-	store1.storeName = @"Pollo Tropical";
-	store1.bountyAmount = 0.12345678f;
+	store1.name = @"Pollo Tropical";
+	store1.bounty = 0.12345678f;
 	store1.location = [[CLLocation alloc] initWithLatitude:26.450625 longitude:-80.18466];
+    store1.imageUrl = [NSURL URLWithString:@"http://lorempixel.com/400/400/nightlife/1"];
 
-	
 	Store *store2 = [[Store alloc] init];
 	store2.storeId = @2;
-	store2.storeName = @"Bread Wallet";
-	store2.bountyAmount = 0.12345678f;
-	store2.location = [[CLLocation alloc] initWithLatitude:26.450626 longitude:-80.18465];
+	store2.name = @"Papa John's";
+	store2.bounty = 0.12345678f;
+    store2.location = [[CLLocation alloc] initWithLatitude:26.450616 longitude:-80.18455];
+    store2.imageUrl = [NSURL URLWithString:@"http://lorempixel.com/400/400/nightlife/2"];
+    
 	return @[store1, store2];
-	
+}
 
+#pragma mark - Helpers
+- (NSString*)bountyAmount {
+    return [NSString stringWithFormat:@"%.0f bits", self.bounty * BTC_TO_BITS];
 }
 
 @end
