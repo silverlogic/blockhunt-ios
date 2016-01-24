@@ -19,6 +19,8 @@
 		631C68181C5412220087C7EF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C68151C5412220087C7EF /* MapViewController.m */; };
 		631C681C1C543D220087C7EF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C681B1C543D220087C7EF /* User.m */; };
 		631C681F1C543E0F0087C7EF /* ExtendedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C681E1C543E0F0087C7EF /* ExtendedError.m */; };
+		631C68231C5473FA0087C7EF /* StoreAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C68221C5473FA0087C7EF /* StoreAnnotation.m */; };
+		631C68261C5474320087C7EF /* StoreAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C68251C5474320087C7EF /* StoreAnnotationView.m */; };
 		6B8067111C53F4E700572346 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067101C53F4E700572346 /* Store.m */; };
 		6B8067141C53F57500572346 /* AbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067131C53F57500572346 /* AbstractModel.m */; };
 		6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8067161C53FDEA00572346 /* MapKit.framework */; };
@@ -70,6 +72,12 @@
 		631C681B1C543D220087C7EF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = BlockHunt/Models/User.m; sourceTree = "<group>"; };
 		631C681D1C543E0F0087C7EF /* ExtendedError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedError.h; path = BlockHunt/Models/ExtendedError.h; sourceTree = "<group>"; };
 		631C681E1C543E0F0087C7EF /* ExtendedError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedError.m; path = BlockHunt/Models/ExtendedError.m; sourceTree = "<group>"; };
+		631C68211C5473FA0087C7EF /* StoreAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreAnnotation.h; path = Views/Annotations/StoreAnnotation.h; sourceTree = "<group>"; };
+		631C68221C5473FA0087C7EF /* StoreAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreAnnotation.m; path = Views/Annotations/StoreAnnotation.m; sourceTree = "<group>"; };
+		631C68241C5474320087C7EF /* StoreAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreAnnotationView.h; path = Views/Annotations/StoreAnnotationView.h; sourceTree = "<group>"; };
+		631C68251C5474320087C7EF /* StoreAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreAnnotationView.m; path = Views/Annotations/StoreAnnotationView.m; sourceTree = "<group>"; };
+		631C68271C5475470087C7EF /* AnnotationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AnnotationProtocol.h; path = Views/Annotations/AnnotationProtocol.h; sourceTree = "<group>"; };
+		631C68281C5475CC0087C7EF /* AnnotationViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AnnotationViewProtocol.h; path = Views/Annotations/AnnotationViewProtocol.h; sourceTree = "<group>"; };
 		6B8067101C53F4E700572346 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Store.m; path = BlockHunt/Models/Store.m; sourceTree = "<group>"; };
 		6B8067121C53F52C00572346 /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Store.h; path = BlockHunt/Models/Store.h; sourceTree = "<group>"; };
 		6B8067131C53F57500572346 /* AbstractModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractModel.m; path = BlockHunt/Models/AbstractModel.m; sourceTree = "<group>"; };
@@ -217,6 +225,19 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		631C68201C5473D40087C7EF /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				631C68211C5473FA0087C7EF /* StoreAnnotation.h */,
+				631C68221C5473FA0087C7EF /* StoreAnnotation.m */,
+				631C68241C5474320087C7EF /* StoreAnnotationView.h */,
+				631C68251C5474320087C7EF /* StoreAnnotationView.m */,
+				631C68271C5475470087C7EF /* AnnotationProtocol.h */,
+				631C68281C5475CC0087C7EF /* AnnotationViewProtocol.h */,
+			);
+			name = Annotations;
+			sourceTree = "<group>";
+		};
 		6B80670F1C53F47A00572346 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +257,7 @@
 		6B8067181C54067600572346 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				631C68201C5473D40087C7EF /* Annotations */,
 				6B8067191C54068100572346 /* Cells */,
 			);
 			name = Views;
@@ -463,9 +485,11 @@
 				631C67DC1C53E7050087C7EF /* AppDelegate.m in Sources */,
 				6B80671C1C54077400572346 /* StoreTableViewCell.m in Sources */,
 				6B8067141C53F57500572346 /* AbstractModel.m in Sources */,
+				631C68261C5474320087C7EF /* StoreAnnotationView.m in Sources */,
 				631C681F1C543E0F0087C7EF /* ExtendedError.m in Sources */,
 				631C68181C5412220087C7EF /* MapViewController.m in Sources */,
 				6BF8EED31C545BEB006D933C /* StoresViewController.m in Sources */,
+				631C68231C5473FA0087C7EF /* StoreAnnotation.m in Sources */,
 				6B8067111C53F4E700572346 /* Store.m in Sources */,
 				6BF8EECD1C5445E2006D933C /* CheckinViewController.m in Sources */,
 				631C67D91C53E7050087C7EF /* main.m in Sources */,
