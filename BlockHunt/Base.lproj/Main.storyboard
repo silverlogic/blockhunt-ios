@@ -157,7 +157,7 @@
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.48999999999999999" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -302,6 +302,7 @@
                         <outlet property="balanceAmount" destination="AAW-Ui-BWq" id="QGQ-i1-cwH"/>
                         <outlet property="bountyAmount" destination="HQK-P3-uAA" id="KGf-DT-p5H"/>
                         <outlet property="checkinStatusView" destination="Mee-hG-E6e" id="MDX-P9-vtD"/>
+                        <outlet property="checkinTab" destination="IHY-HM-Emg" id="QRe-eO-yvf"/>
                         <outlet property="storeImage" destination="2m2-Cc-OtL" id="zfb-mc-J4a"/>
                         <outlet property="successLabel" destination="4Dg-Yv-JuJ" id="0qg-30-nIy"/>
                     </connections>

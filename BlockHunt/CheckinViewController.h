@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CheckinViewController : UIViewController
+@interface CheckinViewController : UIViewController <UITabBarControllerDelegate>
 - (IBAction)scanAction:(id)sender;
 
 @end
