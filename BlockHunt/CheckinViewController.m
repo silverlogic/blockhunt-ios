@@ -13,10 +13,13 @@
 #import "Checkin.h"
 #import "APIClient.h"
 #import "CheckinStatusView.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface CheckinViewController () <QRCodeReaderDelegate>
 
 @property (strong, nonatomic) IBOutlet CheckinStatusView *checkinStatusView;
+@property (strong, nonatomic) FBSDKShareButton *shareButton;
 
 @end
 
@@ -24,6 +27,12 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	((AppDelegate*)[UIApplication sharedApplication].delegate).tabBarController.delegate = self;
+	FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+	content.contentTitle = @"I just got free Bitcoin from Pollo Tropical!";
+	content.imageURL = [[NSURL alloc] initWithString:@"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSkOlCaaN5dwKDjr2MT4hFtkjIieJA1XeiiNakdcLYntDzzVept5w"];
+	self.shareButton.shareContent = content;
+	self.shareButton.center = self.view.center;
+	[self.view addSubview:self.shareButton];
     [self hideStatusView:YES];
 }
 
@@ -74,6 +83,7 @@
 - (void)hideStatusView:(BOOL)shouldHide {
     [UIView animateWithDuration:0.3 animations:^{
         self.checkinStatusView.alpha = shouldHide ? 0.0f : 0.5f;
+		self.shareButton.alpha = shouldHide ? 0.f : 0.5f;
     }];
 }
 
