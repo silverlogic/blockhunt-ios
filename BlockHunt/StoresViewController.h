@@ -10,7 +10,5 @@
 
 @interface StoresViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *storeList; //stores to show in the map
-
 @end
 

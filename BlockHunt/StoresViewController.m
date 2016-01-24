@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSTimer *mapRefreshTimer;
+@property (nonatomic, strong) NSArray *storeList;
 
 @end
 
@@ -26,7 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-	// self.list = list of stores
+	
+    if (![APIClient isAuthenticated]) {
+        [self performSegueWithIdentifier:@"logoutSegue" sender:self];
+    }
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centerMap) name:kLocationUpdateNotification object:nil];
 

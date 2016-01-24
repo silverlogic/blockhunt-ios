@@ -21,6 +21,7 @@
 		631C681F1C543E0F0087C7EF /* ExtendedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C681E1C543E0F0087C7EF /* ExtendedError.m */; };
 		631C68231C5473FA0087C7EF /* StoreAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C68221C5473FA0087C7EF /* StoreAnnotation.m */; };
 		631C68261C5474320087C7EF /* StoreAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C68251C5474320087C7EF /* StoreAnnotationView.m */; };
+		631C682F1C5489570087C7EF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C682E1C5489570087C7EF /* LoginViewController.m */; };
 		6B8067111C53F4E700572346 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067101C53F4E700572346 /* Store.m */; };
 		6B8067141C53F57500572346 /* AbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8067131C53F57500572346 /* AbstractModel.m */; };
 		6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8067161C53FDEA00572346 /* MapKit.framework */; };
@@ -78,6 +79,8 @@
 		631C68251C5474320087C7EF /* StoreAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreAnnotationView.m; path = Views/Annotations/StoreAnnotationView.m; sourceTree = "<group>"; };
 		631C68271C5475470087C7EF /* AnnotationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AnnotationProtocol.h; path = Views/Annotations/AnnotationProtocol.h; sourceTree = "<group>"; };
 		631C68281C5475CC0087C7EF /* AnnotationViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AnnotationViewProtocol.h; path = Views/Annotations/AnnotationViewProtocol.h; sourceTree = "<group>"; };
+		631C682D1C5489570087C7EF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		631C682E1C5489570087C7EF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6B8067101C53F4E700572346 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Store.m; path = BlockHunt/Models/Store.m; sourceTree = "<group>"; };
 		6B8067121C53F52C00572346 /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Store.h; path = BlockHunt/Models/Store.h; sourceTree = "<group>"; };
 		6B8067131C53F57500572346 /* AbstractModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractModel.m; path = BlockHunt/Models/AbstractModel.m; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 		631C68131C5412220087C7EF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				631C682D1C5489570087C7EF /* LoginViewController.h */,
+				631C682E1C5489570087C7EF /* LoginViewController.m */,
 				6BF8EED11C545BEB006D933C /* StoresViewController.h */,
 				6BF8EED21C545BEB006D933C /* StoresViewController.m */,
 				6BF8EECC1C5445E2006D933C /* CheckinViewController.m */,
@@ -484,6 +489,7 @@
 				631C68101C5411DE0087C7EF /* APIClient.m in Sources */,
 				631C67DC1C53E7050087C7EF /* AppDelegate.m in Sources */,
 				6B80671C1C54077400572346 /* StoreTableViewCell.m in Sources */,
+				631C682F1C5489570087C7EF /* LoginViewController.m in Sources */,
 				6B8067141C53F57500572346 /* AbstractModel.m in Sources */,
 				631C68261C5474320087C7EF /* StoreAnnotationView.m in Sources */,
 				631C681F1C543E0F0087C7EF /* ExtendedError.m in Sources */,
