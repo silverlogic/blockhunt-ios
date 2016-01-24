@@ -17,7 +17,8 @@
                                               @"id": @"userId",
                                               @"first_name": @"firstName",
                                               @"last_name": @"lastName",
-											  @"qrcode": @"qrcode"
+											  @"qrcode": @"qrcode",
+											  @"amount": @"amount"
                                               }];
     return fieldMappings;
 }
@@ -63,6 +64,11 @@
 	[self appendErrors:qrcode forKey:@"QR Code"];
 }
 
+- (void)setAmout:(NSArray *)amount {
+	_amount = amount;
+	
+	[self appendErrors:amount forKey:@"Amount"];
+}
 
 - (void)setValidationErrorsDict:(NSDictionary *)validationErrorsDict {
     _validationErrorsDict = validationErrorsDict;

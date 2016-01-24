@@ -129,7 +129,7 @@ typedef NS_ENUM(NSUInteger, PageSize) {
 
 +(void)requestPayout:(CGFloat)amount toAddress:(NSString *)btcAddress success:(void (^)(void))success failure:(void (^)(NSError *, NSHTTPURLResponse *))failure {
 	NSDictionary *params = @{
-							 @"amount": @(amount),
+							 @"amount": [NSString stringWithFormat:@"%.8f", amount],
 							 @"address": btcAddress
 							 };
 	
