@@ -16,7 +16,6 @@
 		631C67F51C53E7050087C7EF /* BlockHuntTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67F41C53E7050087C7EF /* BlockHuntTests.m */; };
 		631C68001C53E7050087C7EF /* BlockHuntUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C67FF1C53E7050087C7EF /* BlockHuntUITests.m */; };
 		631C68101C5411DE0087C7EF /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C680F1C5411DE0087C7EF /* APIClient.m */; };
-		631C68181C5412220087C7EF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C68151C5412220087C7EF /* MapViewController.m */; };
 		631C681C1C543D220087C7EF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C681B1C543D220087C7EF /* User.m */; };
 		631C681F1C543E0F0087C7EF /* ExtendedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C681E1C543E0F0087C7EF /* ExtendedError.m */; };
 		631C68231C5473FA0087C7EF /* StoreAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C68221C5473FA0087C7EF /* StoreAnnotation.m */; };
@@ -68,8 +67,6 @@
 		631C68011C53E7050087C7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631C680E1C5411DE0087C7EF /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIClient.h; path = Singletons/APIClient.h; sourceTree = "<group>"; };
 		631C680F1C5411DE0087C7EF /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIClient.m; path = Singletons/APIClient.m; sourceTree = "<group>"; };
-		631C68141C5412220087C7EF /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		631C68151C5412220087C7EF /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		631C681A1C543D220087C7EF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = BlockHunt/Models/User.h; sourceTree = "<group>"; };
 		631C681B1C543D220087C7EF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = BlockHunt/Models/User.m; sourceTree = "<group>"; };
 		631C681D1C543E0F0087C7EF /* ExtendedError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedError.h; path = BlockHunt/Models/ExtendedError.h; sourceTree = "<group>"; };
@@ -227,8 +224,6 @@
 				6BF8EED21C545BEB006D933C /* StoresViewController.m */,
 				6BF8EECC1C5445E2006D933C /* CheckinViewController.m */,
 				6BF8EECE1C5445F4006D933C /* CheckinViewController.h */,
-				631C68141C5412220087C7EF /* MapViewController.h */,
-				631C68151C5412220087C7EF /* MapViewController.m */,
 				6BBFA0331C54C02D000BB279 /* SendViewController.h */,
 				6BBFA0341C54C02D000BB279 /* SendViewController.m */,
 			);
@@ -499,7 +494,6 @@
 				6BBFA0351C54C02D000BB279 /* SendViewController.m in Sources */,
 				631C68261C5474320087C7EF /* StoreAnnotationView.m in Sources */,
 				631C681F1C543E0F0087C7EF /* ExtendedError.m in Sources */,
-				631C68181C5412220087C7EF /* MapViewController.m in Sources */,
 				6BF8EED31C545BEB006D933C /* StoresViewController.m in Sources */,
 				631C68231C5473FA0087C7EF /* StoreAnnotation.m in Sources */,
 				6B8067111C53F4E700572346 /* Store.m in Sources */,

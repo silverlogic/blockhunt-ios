@@ -55,7 +55,7 @@
         <!--Map-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Map" id="9pv-A4-QxB" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController title="Map" id="9pv-A4-QxB" customClass="StoresViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -74,60 +74,58 @@
                                 <rect key="frame" x="0.0" y="300" width="600" height="251"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreTableViewCell" id="lSE-jA-w1a" userLabel="Store Table View Cell" customClass="StoreTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreTableViewCell" rowHeight="100" id="lSE-jA-w1a" userLabel="Store Table View Cell" customClass="StoreTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lSE-jA-w1a" id="LiN-tA-xpb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sLq-IM-eb5" userLabel="Store Image">
-                                                    <rect key="frame" x="8" y="9" width="25" height="25"/>
+                                                    <rect key="frame" x="8" y="25" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="TEv-g4-x1E"/>
                                                         <constraint firstAttribute="width" secondItem="sLq-IM-eb5" secondAttribute="height" multiplier="1:1" id="U6T-Eg-nEI"/>
                                                         <constraint firstAttribute="height" constant="25" id="lFg-WT-lWh"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="TEv-g4-x1E"/>
+                                                            <exclude reference="lFg-WT-lWh"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rS2-8A-DhD">
-                                                    <rect key="frame" x="41" y="11" width="200" height="21"/>
+                                                    <rect key="frame" x="66" y="39" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bounty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhg-ep-U9C" userLabel="Store Bounty Amount">
-                                                    <rect key="frame" x="249" y="11" width="310" height="21"/>
+                                                    <rect key="frame" x="274" y="39" width="318" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pPq-2P-VTC" userLabel="Store Category Image">
-                                                    <rect key="frame" x="567" y="9" width="25" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="25" id="CS5-Q2-rS5"/>
-                                                        <constraint firstAttribute="width" constant="25" id="WR9-LJ-3DC"/>
-                                                        <constraint firstAttribute="width" secondItem="pPq-2P-VTC" secondAttribute="height" multiplier="1:1" id="vNo-hY-B5L"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pPq-2P-VTC" firstAttribute="leading" secondItem="Nhg-ep-U9C" secondAttribute="trailing" constant="8" id="0Zb-Zb-otr"/>
                                                 <constraint firstItem="sLq-IM-eb5" firstAttribute="leading" secondItem="LiN-tA-xpb" secondAttribute="leading" constant="8" id="0u6-Py-EGM"/>
                                                 <constraint firstItem="rS2-8A-DhD" firstAttribute="centerY" secondItem="LiN-tA-xpb" secondAttribute="centerY" id="J0J-mI-1b7"/>
-                                                <constraint firstAttribute="trailing" secondItem="pPq-2P-VTC" secondAttribute="trailing" constant="8" id="KE2-1c-enH"/>
                                                 <constraint firstItem="rS2-8A-DhD" firstAttribute="width" secondItem="LiN-tA-xpb" secondAttribute="width" multiplier="1:3" id="L83-0j-59O"/>
                                                 <constraint firstItem="Nhg-ep-U9C" firstAttribute="centerY" secondItem="LiN-tA-xpb" secondAttribute="centerY" id="NyP-NH-971"/>
                                                 <constraint firstItem="Nhg-ep-U9C" firstAttribute="leading" secondItem="rS2-8A-DhD" secondAttribute="trailing" constant="8" id="P7o-Wu-Xme"/>
                                                 <constraint firstItem="rS2-8A-DhD" firstAttribute="leading" secondItem="sLq-IM-eb5" secondAttribute="trailing" constant="8" id="bbE-ef-gqO"/>
                                                 <constraint firstItem="rS2-8A-DhD" firstAttribute="centerY" secondItem="LiN-tA-xpb" secondAttribute="centerY" id="i9T-iW-7HE"/>
                                                 <constraint firstItem="rS2-8A-DhD" firstAttribute="leading" secondItem="sLq-IM-eb5" secondAttribute="trailing" constant="8" id="ibY-Ga-Qpe"/>
-                                                <constraint firstItem="pPq-2P-VTC" firstAttribute="centerY" secondItem="LiN-tA-xpb" secondAttribute="centerY" id="jKK-Zs-lhP"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nhg-ep-U9C" secondAttribute="trailing" constant="8" id="j0p-Qa-cUg"/>
                                                 <constraint firstItem="sLq-IM-eb5" firstAttribute="centerY" secondItem="LiN-tA-xpb" secondAttribute="centerY" id="vZR-5U-67Q"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="sLq-IM-eb5" firstAttribute="height" secondItem="lSE-jA-w1a" secondAttribute="height" multiplier="1:2" id="1i6-gN-fEc"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="bountyAmount" destination="Nhg-ep-U9C" id="ugS-LX-hkx"/>
-                                            <outlet property="storeCategoryImageView" destination="pPq-2P-VTC" id="UFT-6n-F1c"/>
                                             <outlet property="storeImageView" destination="sLq-IM-eb5" id="sWZ-dC-Zkj"/>
                                             <outlet property="storeNameLabel" destination="rS2-8A-DhD" id="0ET-es-RKf"/>
                                         </connections>

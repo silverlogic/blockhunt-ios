@@ -7,7 +7,6 @@
 //
 
 #import "SendViewController.h"
-#import "AhaWaterWaveView.h"
 
 @interface SendViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *balanceAmount;

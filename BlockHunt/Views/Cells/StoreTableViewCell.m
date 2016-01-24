@@ -46,4 +46,8 @@ static NSString *const _reuseIdentifier = @"StoreTableViewCell";
     [self.storeImageView setImageWithURL:store.imageUrl placeholderImage:[Store placeholderImage]];
 }
 
++ (CGFloat)height {
+	return 100.0f;
+}
+
 @end
