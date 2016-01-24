@@ -38,7 +38,9 @@ static NSString *const kUserLoginEndpoint = @"auth/login/";
 static NSString *const kUserFacebookLoginEndpoint = @"hunters/facebook";
 static NSString *const kForgotPasswordEndpoint = @"auth/reset-password-request";
 static NSString *const kChangePasswordEndpoint = @"auth/change-password";
+static NSString *const kCurrentHunterEndpoint = @"hunter";
 static NSString *const kStoresEndpoint = @"stores";
+static NSString *const kCheckinsEndpoint = @"checkins?expand=store";
 
 //////////////////////////////////
 // Shared Instance
@@ -68,7 +70,7 @@ typedef NS_ENUM(NSUInteger, PageSize) {
         
         _defaultFailureBlock = ^(RKObjectRequestOperation *operation, NSError *error) {
             // Transport error or server error handled by errorDescriptor
-            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Alert.Title.Error", @"Alert Error title") message:error.localizedDescription delegate:nil cancelButtonTitle:NSLocalizedString(@"Alert.OK", @"Alert OK button title") otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error!", @"Alert Error title") message:error.localizedDescription delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Alert OK button title") otherButtonTitles:nil] show];
         };
     }
     
@@ -103,18 +105,18 @@ typedef NS_ENUM(NSUInteger, PageSize) {
 //        [CrashlyticsKit setUserIdentifier:[User currentUser].userId.stringValue];
 //        [CrashlyticsKit setUserEmail:[User currentUser].email];
 //        [CrashlyticsKit setUserName:[User currentUser].name];
-//        [APIClient getUser:[User currentUser] success:^(User *user) {
-//            [User setCurrentUser:user];
+        [APIClient getUser:[User currentUser] success:^(User *user) {
+            [User setCurrentUser:user];
             if (success) {
                 success(user);
             }
-//        } failure:^(NSError *error, NSHTTPURLResponse *response) {
-//            if (failure) {
-//                failure(error);
-//            } else {
-//                _defaultFailureBlock(operation, error);
-//            }
-//        }];
+        } failure:^(NSError *error, NSHTTPURLResponse *response) {
+            if (failure) {
+                failure(error, operation.HTTPRequestOperation.response);
+            } else {
+                _defaultFailureBlock(operation, error);
+            }
+        }];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         if (failure) {
             failure(error, operation.HTTPRequestOperation.response);
@@ -181,6 +183,30 @@ typedef NS_ENUM(NSUInteger, PageSize) {
         if (success) {
             success(kids);
         }
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(error, operation.HTTPRequestOperation.response);
+        } else {
+            _defaultFailureBlock(operation, error);
+        }
+    }];
+}
+
++ (void)checkinWithCode:(NSString *)qrcode success:(void (^)(Checkin *))success failure:(void (^)(NSError *, NSHTTPURLResponse *))failure {
+    NSDictionary *params = @{
+                             @"qrcode": qrcode,
+							 @"coords": @{
+									 @"lat": @([LocationHelper sharedInstance].currentLocation.coordinate.latitude),
+									 @"long": @([LocationHelper sharedInstance].currentLocation.coordinate.longitude)
+									 }
+                             };
+
+    [[RKObjectManager sharedManager] postObject:nil path:kCheckinsEndpoint parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        Checkin *checkin = mappingResult.firstObject;
+        [User currentUser].balance += checkin.bounty;
+		if (success) {
+			success(checkin);
+		}
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         if (failure) {
             failure(error, operation.HTTPRequestOperation.response);
@@ -266,10 +292,18 @@ typedef NS_ENUM(NSUInteger, PageSize) {
     [storeResponseMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"address" toKeyPath:@"address" withMapping:addressResponseMapping]];
     RKObjectMapping *storeRequestMapping = [storeResponseMapping inverseMapping];
     storeRequestMapping.assignsDefaultValueForMissingAttributes = NO;
-    
+	
+	/* CHECKIN */
+	RKObjectMapping *checkinResponseMapping = [RKObjectMapping mappingForClass:[Checkin class]];
+	[checkinResponseMapping addAttributeMappingsFromDictionary:[Checkin fieldMappings]];
+    [checkinResponseMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"store" toKeyPath:@"store" withMapping:storeResponseMapping]];
+	
     /* ********************************************* */
     /* ********* RESPONSE DESCRIPTORS ************** */
     /* ********************************************* */
+    
+    /* CHECKIN */
+    RKResponseDescriptor *checkinResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:checkinResponseMapping method:RKRequestMethodPOST pathPattern:nil keyPath:nil statusCodes:successStatusCodes];
     
     /* SIGNUP */
     RKResponseDescriptor *signupResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping method:RKRequestMethodPOST pathPattern:kSignupEndpoint keyPath:nil statusCodes:successStatusCodes];
@@ -277,6 +311,9 @@ typedef NS_ENUM(NSUInteger, PageSize) {
     /* LOGIN */
     RKResponseDescriptor *loginResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping method:RKRequestMethodPOST pathPattern:kUserLoginEndpoint keyPath:nil statusCodes:successStatusCodes];
     RKResponseDescriptor *facebookLoginResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping method:RKRequestMethodPOST pathPattern:kUserFacebookLoginEndpoint keyPath:nil statusCodes:successStatusCodes];
+    
+    /* HUNTER */
+    RKResponseDescriptor *currentHunterResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping method:RKRequestMethodGET pathPattern:kCurrentHunterEndpoint keyPath:nil statusCodes:successStatusCodes];
     
     /* FORGOT PASSWORD */
     RKResponseDescriptor *forgotPasswordResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:emptyResponseMapping method:RKRequestMethodPOST pathPattern:kForgotPasswordEndpoint keyPath:nil statusCodes:successStatusCodes];
@@ -294,9 +331,11 @@ typedef NS_ENUM(NSUInteger, PageSize) {
                                                signupResponseDescriptor,
                                                loginResponseDescriptor,
                                                facebookLoginResponseDescriptor,
+                                               currentHunterResponseDescriptor,
                                             forgotPasswordResponseDescriptor,
                                                changePasswordResponseDescriptor,
-                                               storesResponseDescriptor
+                                               storesResponseDescriptor,
+											   checkinResponseDescriptor
                                                ]];
     
     /* ********************************************* */
@@ -310,7 +349,7 @@ typedef NS_ENUM(NSUInteger, PageSize) {
     
     /* STORE */
     RKRequestDescriptor *storeRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:storeRequestMapping objectClass:[Store class] rootKeyPath:nil method:RKRequestMethodPOST];
-    
+		
     // Add our descriptors to the manager
     [manager addRequestDescriptorsFromArray:@[
                                               signUpRequestDescriptor,

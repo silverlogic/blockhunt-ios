@@ -28,13 +28,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 	
-    if (![APIClient isAuthenticated]) {
-        [self performSegueWithIdentifier:@"logoutSegue" sender:self];
-    }
-	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centerMap) name:kLocationUpdateNotification object:nil];
 
     [self reloadStores];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (![APIClient isAuthenticated]) {
+        [self performSegueWithIdentifier:@"logoutSegue" sender:self];
+    }
 }
 
 - (void)centerMap {

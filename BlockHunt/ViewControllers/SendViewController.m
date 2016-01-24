@@ -7,6 +7,7 @@
 //
 
 #import "SendViewController.h"
+#import "User.h"
 
 @interface SendViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *balanceAmount;
@@ -18,9 +19,10 @@
 
 @implementation SendViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.balanceAmount.text = [User currentUser].balanceAmount;
 }
 
 - (void)didReceiveMemoryWarning {
