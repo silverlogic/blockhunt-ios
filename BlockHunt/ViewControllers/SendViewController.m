@@ -32,22 +32,16 @@
     self.balanceAmount.text = [User currentUser].balanceAmount;
 }
 - (IBAction)sendPressed:(id)sender {
-	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Your Bitcoins have been sent" message:@"Thank You!" preferredStyle:UIAlertControllerStyleAlert];
-	UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-	[alert addAction:defaultAction];
-	[self presentViewController:alert animated:YES completion:nil];
-	self.transferAmount.text = @"";
-	self.toAddress.text = @"";
-	
-	[APIClient requestPayout:self.transferAmount.text.floatValue toAddress:self.toAddress.text success:^{
+	[APIClient requestPayout:self.transferAmount.text.floatValue / 1000.0 / 1000.0 toAddress:self.toAddress.text success:^{
 		//make alert "your bitcoins have been sent"
-
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Your Bits have been sent" message:@"Thank You!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
 		//clear values
-		
-	} failure:^(NSError *error, NSHTTPURLResponse *response) {
-		//aww
-	}];
-
+        self.transferAmount.text = nil;
+        self.toAddress.text = nil;
+	} failure:nil];
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
