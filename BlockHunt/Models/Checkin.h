@@ -18,5 +18,6 @@
 @property (nonatomic, assign) CGFloat bounty;
 @property (nonatomic, readonly) NSString *bountyAmount;
 @property (nonatomic, strong) Store *store;
+@property (nonatomic, strong) NSNumber *storeId;
 
 @end

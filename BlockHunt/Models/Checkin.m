@@ -19,7 +19,8 @@
 	[fieldMappings addEntriesFromDictionary:@{
 											  @"id": @"checkinId",
 											  @"qrcode": @"qrcode",
-											  @"reward": @"bounty"
+											  @"reward": @"bounty",
+                                              @"store": @"storeId"
 											  }];
 	return fieldMappings;
 }
