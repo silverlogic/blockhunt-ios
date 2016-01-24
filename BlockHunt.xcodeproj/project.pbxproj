@@ -26,6 +26,7 @@
 		6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8067161C53FDEA00572346 /* MapKit.framework */; };
 		6B80671C1C54077400572346 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B80671B1C54077400572346 /* StoreTableViewCell.m */; };
 		6B80671E1C54192600572346 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B80671D1C54192600572346 /* CoreLocation.framework */; };
+		6BBFA02F1C547F6B000BB279 /* CheckinStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBFA02E1C547F6B000BB279 /* CheckinStatusView.xib */; };
 		6BF8EECD1C5445E2006D933C /* CheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8EECC1C5445E2006D933C /* CheckinViewController.m */; };
 		6BF8EED31C545BEB006D933C /* StoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8EED21C545BEB006D933C /* StoresViewController.m */; };
 		DE4D6C491DC966630E9ECC6C /* libPods-BlockHuntTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DE67D0E47C815D7E41CDD0 /* libPods-BlockHuntTests.a */; };
@@ -86,6 +87,7 @@
 		6B80671A1C54075C00572346 /* StoreTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StoreTableViewCell.h; path = Views/Cells/StoreTableViewCell.h; sourceTree = "<group>"; };
 		6B80671B1C54077400572346 /* StoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreTableViewCell.m; path = Views/Cells/StoreTableViewCell.m; sourceTree = "<group>"; };
 		6B80671D1C54192600572346 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6BBFA02E1C547F6B000BB279 /* CheckinStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CheckinStatusView.xib; path = Views/CheckinStatusView.xib; sourceTree = "<group>"; };
 		6BF8EECC1C5445E2006D933C /* CheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckinViewController.m; path = ../CheckinViewController.m; sourceTree = "<group>"; };
 		6BF8EECE1C5445F4006D933C /* CheckinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CheckinViewController.h; path = ../CheckinViewController.h; sourceTree = "<group>"; };
 		6BF8EED11C545BEB006D933C /* StoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoresViewController.h; path = ../StoresViewController.h; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				631C67DA1C53E7050087C7EF /* AppDelegate.h */,
 				631C67DB1C53E7050087C7EF /* AppDelegate.m */,
 				631C67E31C53E7050087C7EF /* Main.storyboard */,
+				6BBFA02E1C547F6B000BB279 /* CheckinStatusView.xib */,
 				631C67E61C53E7050087C7EF /* Assets.xcassets */,
 				631C67E81C53E7050087C7EF /* LaunchScreen.storyboard */,
 				631C67EB1C53E7050087C7EF /* Info.plist */,
@@ -392,6 +395,7 @@
 			files = (
 				631C67EA1C53E7050087C7EF /* LaunchScreen.storyboard in Resources */,
 				631C67E71C53E7050087C7EF /* Assets.xcassets in Resources */,
+				6BBFA02F1C547F6B000BB279 /* CheckinStatusView.xib in Resources */,
 				631C67E51C53E7050087C7EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

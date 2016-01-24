@@ -11,6 +11,11 @@
 #import "QRCodeReaderViewController.h"
 
 @interface CheckinViewController ()
+@property (strong, nonatomic) IBOutlet UIImageView *storeImage;
+@property (strong, nonatomic) IBOutlet UILabel *successLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bountyAmount;
+@property (strong, nonatomic) IBOutlet UILabel *balanceAmount;
+@property (strong, nonatomic) IBOutlet UIView *checkinStatusView;
 
 @end
 
