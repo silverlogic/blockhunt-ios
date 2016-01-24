@@ -33,8 +33,9 @@ static NSString *const kPageSize	= @"page_size";
 static NSString *const kPage		= @"page";
 
 // Endpoints
-static NSString *const kSignupEndpoint = @"auth/register";
-static NSString *const kLoginEndpoint = @"auth/login";
+static NSString *const kSignupEndpoint = @"hunters";
+static NSString *const kUserLoginEndpoint = @"auth/login/";
+static NSString *const kUserFacebookLoginEndpoint = @"hunters/facebook";
 static NSString *const kForgotPasswordEndpoint = @"auth/reset-password-request";
 static NSString *const kChangePasswordEndpoint = @"auth/change-password";
 static NSString *const kStoresEndpoint = @"stores";
@@ -89,6 +90,38 @@ typedef NS_ENUM(NSUInteger, PageSize) {
 #pragma mark - API Endpoints
 + (void)cancelAllRequests {
     [[RKObjectManager sharedManager].operationQueue cancelAllOperations];
+}
+
++ (void)loginWithFacebookToken:(NSString*)accessToken success:(void (^)(User *user))success failure:(void (^)(NSError *error, NSHTTPURLResponse *response))failure {
+    NSDictionary *params = @{
+                             @"access_token": accessToken
+                             };
+
+    [[RKObjectManager sharedManager] postObject:nil path:kUserFacebookLoginEndpoint parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        User *user = mappingResult.firstObject;
+        [APIClient setToken:user.token];
+//        [CrashlyticsKit setUserIdentifier:[User currentUser].userId.stringValue];
+//        [CrashlyticsKit setUserEmail:[User currentUser].email];
+//        [CrashlyticsKit setUserName:[User currentUser].name];
+//        [APIClient getUser:[User currentUser] success:^(User *user) {
+//            [User setCurrentUser:user];
+            if (success) {
+                success(user);
+            }
+//        } failure:^(NSError *error, NSHTTPURLResponse *response) {
+//            if (failure) {
+//                failure(error);
+//            } else {
+//                _defaultFailureBlock(operation, error);
+//            }
+//        }];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(error, operation.HTTPRequestOperation.response);
+        } else {
+            _defaultFailureBlock(operation, error);
+        }
+    }];
 }
 
 //+ (void)signUpUser:(User*)user success:(void (^)(User *user))success failure:(void (^)(NSError *error))failure {
@@ -242,7 +275,8 @@ typedef NS_ENUM(NSUInteger, PageSize) {
     RKResponseDescriptor *signupResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping method:RKRequestMethodPOST pathPattern:kSignupEndpoint keyPath:nil statusCodes:successStatusCodes];
     
     /* LOGIN */
-    RKResponseDescriptor *loginResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping method:RKRequestMethodPOST pathPattern:kLoginEndpoint keyPath:nil statusCodes:successStatusCodes];
+    RKResponseDescriptor *loginResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping method:RKRequestMethodPOST pathPattern:kUserLoginEndpoint keyPath:nil statusCodes:successStatusCodes];
+    RKResponseDescriptor *facebookLoginResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping method:RKRequestMethodPOST pathPattern:kUserFacebookLoginEndpoint keyPath:nil statusCodes:successStatusCodes];
     
     /* FORGOT PASSWORD */
     RKResponseDescriptor *forgotPasswordResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:emptyResponseMapping method:RKRequestMethodPOST pathPattern:kForgotPasswordEndpoint keyPath:nil statusCodes:successStatusCodes];
@@ -258,7 +292,9 @@ typedef NS_ENUM(NSUInteger, PageSize) {
                                                error400Descriptor,
                                                error500Descriptor,
                                                signupResponseDescriptor,
-                                               loginResponseDescriptor,forgotPasswordResponseDescriptor,
+                                               loginResponseDescriptor,
+                                               facebookLoginResponseDescriptor,
+                                            forgotPasswordResponseDescriptor,
                                                changePasswordResponseDescriptor,
                                                storesResponseDescriptor
                                                ]];

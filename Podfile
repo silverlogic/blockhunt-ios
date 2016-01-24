@@ -4,6 +4,7 @@ inhibit_all_warnings!
 
 link_with 'BlockHunt'
 
+pod 'FBSDKLoginKit', '~> 4.9'
 pod 'LocationHelper'
 pod 'QRCodeReaderViewController'
 pod 'RestKit', '~> 0.26'

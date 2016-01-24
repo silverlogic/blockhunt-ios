@@ -1,17 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="ujV-vi-UNV">
+            <objects>
+                <viewController id="5vH-jp-8gJ" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5wU-ib-QNN"/>
+                        <viewControllerLayoutGuide type="bottom" id="heP-5z-FgY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wLu-Aw-due">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-simplified" translatesAutoresizingMaskIntoConstraints="NO" id="BHT-Tz-kFB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8l-sh-BUB" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="277" y="550" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-store" translatesAutoresizingMaskIntoConstraints="NO" id="4jV-y0-L9N">
+                                <rect key="frame" x="130" y="20" width="341" height="341"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4jV-y0-L9N" firstAttribute="top" secondItem="5wU-ib-QNN" secondAttribute="bottom" id="382-7M-Fj7"/>
+                            <constraint firstItem="4jV-y0-L9N" firstAttribute="centerX" secondItem="wLu-Aw-due" secondAttribute="centerX" id="6CF-gO-KUa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BHT-Tz-kFB" secondAttribute="trailing" constant="-20" id="97j-KZ-eAb"/>
+                            <constraint firstItem="heP-5z-FgY" firstAttribute="top" secondItem="BHT-Tz-kFB" secondAttribute="bottom" id="Cyd-u8-hZA"/>
+                            <constraint firstItem="BHT-Tz-kFB" firstAttribute="leading" secondItem="wLu-Aw-due" secondAttribute="leadingMargin" constant="-20" id="FO3-HF-0wH"/>
+                            <constraint firstItem="heP-5z-FgY" firstAttribute="top" secondItem="J8l-sh-BUB" secondAttribute="bottom" constant="20" id="hiG-uu-YJU"/>
+                            <constraint firstItem="J8l-sh-BUB" firstAttribute="centerX" secondItem="wLu-Aw-due" secondAttribute="centerX" id="rFq-Nk-AgV"/>
+                            <constraint firstItem="BHT-Tz-kFB" firstAttribute="top" secondItem="5wU-ib-QNN" secondAttribute="bottom" constant="-20" id="x9q-tC-cMb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="J8l-sh-BUB" id="6iH-BG-PEw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cw-jf-lny" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="392" y="-1220"/>
+        </scene>
         <!--Map-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Map" id="9pv-A4-QxB" customClass="StoresViewController" sceneMemberID="viewController">
+                <viewController title="Map" id="9pv-A4-QxB" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -34,7 +78,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lSE-jA-w1a" id="LiN-tA-xpb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sLq-IM-eb5" userLabel="Store Image">
@@ -111,11 +155,12 @@
                     <connections>
                         <outlet property="mapView" destination="fsc-R9-RjK" id="QXJ-3j-VPe"/>
                         <outlet property="tableView" destination="duT-GR-myh" id="5jt-sb-zOP"/>
+                        <segue destination="5vH-jp-8gJ" kind="modal" identifier="logoutSegue" animates="NO" modalTransitionStyle="flipHorizontal" id="dcb-ab-1Iq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="750" y="-438"/>
         </scene>
         <!--Send-->
         <scene sceneID="wg7-f3-ORb">
@@ -314,6 +359,8 @@
     </scenes>
     <resources>
         <image name="doughnut" width="166" height="250"/>
+        <image name="map-simplified" width="600" height="600"/>
+        <image name="placeholder-store" width="341" height="341"/>
         <image name="tabbar-icon-bitcoin" width="30" height="30"/>
         <image name="tabbar-icon-map" width="30" height="30"/>
     </resources>
