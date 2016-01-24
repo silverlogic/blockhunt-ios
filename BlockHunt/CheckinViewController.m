@@ -77,7 +77,7 @@
 #pragma mark - Helper
 - (void)hideStatusView:(BOOL)shouldHide {
     [UIView animateWithDuration:0.3 animations:^{
-        self.checkinStatusView.alpha = shouldHide ? 0.0f : 0.5f;
+        self.checkinStatusView.alpha = shouldHide ? 0.0f : 1.0f;
     }];
 }
 
