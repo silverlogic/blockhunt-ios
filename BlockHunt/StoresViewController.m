@@ -29,7 +29,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centerMap) name:kLocationUpdateNotification object:nil];
 //	self.storeList = [Store mockStores];
     
-    [APIClient getStores:^(NSArray *stores) {
+    [APIClient getStoresAroundLocation:self.mapView.centerCoordinate success:^(NSArray *stores) {
         self.storeList = stores;
         [self.tableView reloadData];
     } failure:nil];

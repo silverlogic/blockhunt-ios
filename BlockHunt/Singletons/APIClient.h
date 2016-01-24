@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface APIClient : NSObject
 
 + (instancetype)sharedClient;
 
-+ (void)getStores:(void (^)(NSArray *stores))success failure:(void (^)(NSError *error, NSHTTPURLResponse *response))failure;
++ (void)getStoresAroundLocation:(CLLocationCoordinate2D)coordinate success:(void (^)(NSArray *stores))success failure:(void (^)(NSError *error, NSHTTPURLResponse *response))failure;
 
 @end

@@ -9,11 +9,18 @@
 #import "AbstractModel.h"
 #import <CoreLocation/CoreLocation.h>
 
+@interface Address : AbstractModel
+
+@property (nonatomic, copy) NSString *line1;
+@property (nonatomic, strong) CLLocation *location;
+
+@end
+
 @interface Store : AbstractModel
 
 @property (nonatomic, strong) NSNumber *storeId;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) CLLocation *location;
+@property (nonatomic, strong) Address *address;
 @property (nonatomic, copy) NSString *tagline;
 @property (nonatomic, assign) CGFloat bounty;
 @property (nonatomic, strong) NSURL *imageUrl;

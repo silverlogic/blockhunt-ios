@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsc-R9-RjK">
-                                <rect key="frame" x="0.0" y="20" width="600" height="280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="duT-GR-myh" userLabel="Stores List View">
                                 <rect key="frame" x="0.0" y="300" width="600" height="251"/>
@@ -97,7 +97,7 @@
                             <constraint firstAttribute="trailing" secondItem="duT-GR-myh" secondAttribute="trailing" id="46d-5j-UTz"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="duT-GR-myh" secondAttribute="bottom" id="7pe-uB-VBq"/>
                             <constraint firstAttribute="trailing" secondItem="fsc-R9-RjK" secondAttribute="trailing" id="Lge-cV-7bs"/>
-                            <constraint firstItem="fsc-R9-RjK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="NdX-lf-bRw"/>
+                            <constraint firstItem="fsc-R9-RjK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="-20" id="NdX-lf-bRw"/>
                             <constraint firstItem="fsc-R9-RjK" firstAttribute="bottom" secondItem="tsR-hK-woN" secondAttribute="centerY" id="WxA-zf-LtK"/>
                             <constraint firstItem="duT-GR-myh" firstAttribute="top" secondItem="fsc-R9-RjK" secondAttribute="bottom" id="g6R-r3-ss8"/>
                             <constraint firstItem="duT-GR-myh" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="j4y-MX-t1j"/>

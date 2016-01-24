@@ -139,8 +139,10 @@ typedef NS_ENUM(NSUInteger, PageSize) {
 //    }];
 //}
 
-+ (void)getStores:(void (^)(NSArray *stores))success failure:(void (^)(NSError *error, NSHTTPURLResponse *response))failure {
-    NSDictionary* params = @{ kPageSize: @(PageSizeLarge) };
++ (void)getStoresAroundLocation:(CLLocationCoordinate2D)coordinate success:(void (^)(NSArray *stores))success failure:(void (^)(NSError *error, NSHTTPURLResponse *response))failure {
+    NSString *coords = [NSString stringWithFormat:@"%f,%f", coordinate.latitude, coordinate.longitude];
+    NSDictionary* params = @{ kPageSize: @(PageSizeLarge),
+                              @"coords": coords};
     [[RKObjectManager sharedManager] getObjectsAtPath:kStoresEndpoint parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         NSArray* kids = mappingResult.array;
         if (success) {
@@ -213,18 +215,24 @@ typedef NS_ENUM(NSUInteger, PageSize) {
     RKObjectMapping *emptyResponseMapping = [RKObjectMapping mappingForClass:[NSDictionary class]];
     
     /* LOCATION */
-    RKAttributeMapping *locationMapping = [RKAttributeMapping attributeMappingFromKeyPath:@"address.coords" toKeyPath:@"location"];
-    locationMapping.valueTransformer = [RKCLLocationValueTransformer locationValueTransformerWithLatitudeKey:@"lat" longitudeKey:@"lon"];
+    RKAttributeMapping *locationMapping = [RKAttributeMapping attributeMappingFromKeyPath:@"coords" toKeyPath:@"location"];
+    locationMapping.valueTransformer = [RKCLLocationValueTransformer locationValueTransformerWithLatitudeKey:@"lat" longitudeKey:@"long"];
+    
+    /* ADDRESS */
+    RKObjectMapping *addressResponseMapping = [RKObjectMapping mappingForClass:[Address class]];
+    [addressResponseMapping addAttributeMappingsFromDictionary:[Address fieldMappings]];
+    [addressResponseMapping addPropertyMapping:locationMapping];
     
     /* USER */
     RKObjectMapping *userResponseMapping = [RKObjectMapping mappingForClass:[User class]];
     [userResponseMapping addAttributeMappingsFromDictionary:[User fieldMappings]];
     
     /* STORE */
-    RKObjectMapping *deviceResponseMapping = [RKObjectMapping mappingForClass:[Store class]];
-    [deviceResponseMapping addAttributeMappingsFromDictionary:[Store fieldMappings]];
-    RKObjectMapping *deviceRequestMapping = [deviceResponseMapping inverseMapping];
-    deviceRequestMapping.assignsDefaultValueForMissingAttributes = NO;
+    RKObjectMapping *storeResponseMapping = [RKObjectMapping mappingForClass:[Store class]];
+    [storeResponseMapping addAttributeMappingsFromDictionary:[Store fieldMappings]];
+    [storeResponseMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"address" toKeyPath:@"address" withMapping:addressResponseMapping]];
+    RKObjectMapping *storeRequestMapping = [storeResponseMapping inverseMapping];
+    storeRequestMapping.assignsDefaultValueForMissingAttributes = NO;
     
     /* ********************************************* */
     /* ********* RESPONSE DESCRIPTORS ************** */
@@ -243,7 +251,7 @@ typedef NS_ENUM(NSUInteger, PageSize) {
     RKResponseDescriptor *changePasswordResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:emptyResponseMapping method:RKRequestMethodPOST pathPattern:kChangePasswordEndpoint keyPath:nil statusCodes:successStatusCodes];
     
     /* STORES */
-    RKResponseDescriptor *storesResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:deviceResponseMapping method:RKRequestMethodGET pathPattern:kStoresEndpoint keyPath:kResults statusCodes:successStatusCodes];
+    RKResponseDescriptor *storesResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:storeResponseMapping method:RKRequestMethodGET pathPattern:kStoresEndpoint keyPath:kResults statusCodes:successStatusCodes];
     
     // Add our descriptors to the manager
     [manager addResponseDescriptorsFromArray:@[
@@ -265,7 +273,7 @@ typedef NS_ENUM(NSUInteger, PageSize) {
     signUpRequestMapping.assignsDefaultValueForMissingAttributes = NO;
     
     /* STORE */
-    RKRequestDescriptor *storeRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:deviceRequestMapping objectClass:[Store class] rootKeyPath:nil method:RKRequestMethodPOST];
+    RKRequestDescriptor *storeRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:storeRequestMapping objectClass:[Store class] rootKeyPath:nil method:RKRequestMethodPOST];
     
     // Add our descriptors to the manager
     [manager addRequestDescriptorsFromArray:@[
