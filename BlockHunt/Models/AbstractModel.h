@@ -11,6 +11,11 @@
 
 @interface AbstractModel : NSObject
 
+@property (nonatomic, strong) NSDate *createdOn;
+@property (nonatomic, strong) NSDate *updatedOn;
+@property (nonatomic, strong) NSDate *deletedOn;
+
++ (NSDictionary*)fieldMappings;
 + (UIImage*)placeholderImage;
 
 @end

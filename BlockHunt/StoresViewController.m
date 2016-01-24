@@ -11,6 +11,7 @@
 #import "Store.h"
 #import "LocationHelper.h"
 #import "StoreTableViewCell.h"
+#import "APIClient.h"
 
 @interface StoresViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -26,7 +27,12 @@
 	// self.list = list of stores
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centerMap) name:kLocationUpdateNotification object:nil];
-	self.storeList = [Store mockStores];
+//	self.storeList = [Store mockStores];
+    
+    [APIClient getStores:^(NSArray *stores) {
+        self.storeList = stores;
+        [self.tableView reloadData];
+    } failure:nil];
 }
 
 - (void)didReceiveMemoryWarning {

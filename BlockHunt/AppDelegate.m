@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "LocationHelper.h"
+#import "APIClient.h"
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface AppDelegate ()
 
@@ -18,8 +21,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [APIClient sharedClient];
+    
 	[[LocationHelper sharedInstance].locationManager requestWhenInUseAuthorization];
 	[[LocationHelper sharedInstance] requestNewLocation];
+    
+    [self customizeAppearance];
 
     return YES;
 }
@@ -44,6 +52,17 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+#pragma mark - Helpers
+- (void)customizeAppearance {
+    /* TabBar */
+    // *****************
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBarTintColor:UIColorFromRGB(0xc32d27)];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:UIColorFromRGB(0x3C2415), NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    // *****************
 }
 
 @end

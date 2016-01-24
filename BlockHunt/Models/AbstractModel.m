@@ -11,6 +11,13 @@
 
 @implementation AbstractModel
 
++ (NSDictionary*)fieldMappings {
+    return @{ @"created": @"createdOn",
+              @"updated": @"updatedOn",
+              @"deleted": @"deletedOn"
+              };
+}
+
 + (UIImage*)placeholderImage {
 	static UIImage *_placeholderImage;
 	_placeholderImage = [UIImage imageNamed:@"placeholder"];

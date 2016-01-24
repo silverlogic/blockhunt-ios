@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "StoreTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 #import "Store.h"
 
 static NSString *const _reuseIdentifier = @"StoreTableViewCell";
@@ -28,8 +29,9 @@ static NSString *const _reuseIdentifier = @"StoreTableViewCell";
 #pragma mark - Setters
 - (void)setStore:(Store *)store {
 	_store = store;
-	self.storeNameLabel.text = self.store.storeName;
-	self.bountyAmount.text = [NSString stringWithFormat:@"%f",self.store.bountyAmount];
+	self.storeNameLabel.text = self.store.name;
+    self.bountyAmount.text = self.store.bountyAmount;
+    [self.storeImageView setImageWithURL:store.imageUrl placeholderImage:[Store placeholderImage]];
 }
 
 @end
