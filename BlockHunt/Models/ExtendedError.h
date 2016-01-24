@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSArray *password;
 @property (nonatomic, strong) NSArray *oldPassword;
 @property (nonatomic, strong) NSArray *qrcode;
+@property (nonatomic, strong) NSArray *amount;
 
 @property (nonatomic, copy) NSString *detail;
 @property (nonatomic, copy) NSString *error;
