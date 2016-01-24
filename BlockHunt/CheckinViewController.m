@@ -17,7 +17,6 @@
 @interface CheckinViewController () <QRCodeReaderDelegate>
 
 @property (strong, nonatomic) IBOutlet CheckinStatusView *checkinStatusView;
-@property (strong, nonatomic) IBOutlet UITabBarItem *checkinTab;
 
 @end
 
@@ -40,6 +39,9 @@
     [self hideStatusView:YES];
 }
 
+- (IBAction)scanPressed:(id)sender {
+    [self scan];
+}
 
 - (void)scan {
 	if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
