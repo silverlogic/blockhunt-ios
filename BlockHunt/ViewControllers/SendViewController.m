@@ -43,6 +43,7 @@
 		//clear values
         self.transferAmount.text = nil;
         self.toAddress.text = nil;
+        self.balanceAmount.text = [User currentUser].balanceAmount;
 	} failure:nil];
 }
 

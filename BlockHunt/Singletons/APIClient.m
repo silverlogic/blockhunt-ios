@@ -151,7 +151,8 @@ typedef NS_ENUM(NSUInteger, PageSize) {
 							 @"address": btcAddress
 							 };
 	
-	[[RKObjectManager sharedManager] postObject:nil path:kSendEndpoint parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [[RKObjectManager sharedManager] postObject:nil path:kSendEndpoint parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        [User currentUser].balance -= amount;
 		if (success) {
 			success();
 		}
