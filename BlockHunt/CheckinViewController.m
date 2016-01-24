@@ -15,8 +15,12 @@
 @end
 
 @implementation CheckinViewController
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	[self scan];
+}
 
-- (IBAction)scanAction:(id)sender {
+- (void)scan {
 	if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
 		static QRCodeReaderViewController *vc = nil;
 		static dispatch_once_t onceToken;
@@ -40,6 +44,11 @@
 		[alert addAction:defaultAction];
 		[self presentViewController:alert animated:YES completion:nil];
 	}
+}
+
+// User can try again
+- (IBAction)scanAction:(id)sender {
+	[self scan];
 }
 
 #pragma mark - QRCodeReader Delegate Methods
