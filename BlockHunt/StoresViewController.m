@@ -26,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.tableView.backgroundColor = [UIColor colorWithRed:243/255.0 green:229/255.0 blue:171/255.0 alpha:.5];
     // Do any additional setup after loading the view, typically from a nib.
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centerMap) name:kLocationUpdateNotification object:nil];
