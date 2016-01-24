@@ -10,7 +10,6 @@
 
 
 @interface CheckinViewController : UIViewController <UITabBarControllerDelegate>
-- (IBAction)scanAction:(id)sender;
 
 @end
 

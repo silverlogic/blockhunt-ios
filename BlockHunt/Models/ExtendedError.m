@@ -16,7 +16,8 @@
                                               @"username": @"username",
                                               @"id": @"userId",
                                               @"first_name": @"firstName",
-                                              @"last_name": @"lastName"
+                                              @"last_name": @"lastName",
+											  @"qrcode": @"qrcode"
                                               }];
     return fieldMappings;
 }
@@ -55,6 +56,11 @@
     _oldPassword = oldPassword;
     
     [self appendErrors:oldPassword forKey:@"Old Password"];
+}
+- (void)setQrcode:(NSArray *)qrcode {
+	_qrcode = qrcode;
+	
+	[self appendErrors:qrcode forKey:@"QR Code"];
 }
 
 

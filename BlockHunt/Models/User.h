@@ -31,8 +31,8 @@ typedef NS_ENUM(NSUInteger, Gender) {
 
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString * firstName;
-@property (nonatomic, copy) NSString * lastName;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *token;
 @property (nonatomic, strong) NSNumber *userId;
