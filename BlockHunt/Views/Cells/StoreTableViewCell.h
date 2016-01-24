@@ -14,6 +14,7 @@
 @property (nonatomic, strong) Store *store;
 // Checkin Action Block
 + (NSString*)reuseIdentifier;
++ (CGFloat)height;
 
 @end
 
