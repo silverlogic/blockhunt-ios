@@ -27,6 +27,7 @@
 		6B8067171C53FDEA00572346 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8067161C53FDEA00572346 /* MapKit.framework */; };
 		6B80671C1C54077400572346 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B80671B1C54077400572346 /* StoreTableViewCell.m */; };
 		6B80671E1C54192600572346 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B80671D1C54192600572346 /* CoreLocation.framework */; };
+		6BBFA0351C54C02D000BB279 /* SendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBFA0341C54C02D000BB279 /* SendViewController.m */; };
 		6BF8EECD1C5445E2006D933C /* CheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8EECC1C5445E2006D933C /* CheckinViewController.m */; };
 		6BF8EED31C545BEB006D933C /* StoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8EED21C545BEB006D933C /* StoresViewController.m */; };
 		DE4D6C491DC966630E9ECC6C /* libPods-BlockHuntTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DE67D0E47C815D7E41CDD0 /* libPods-BlockHuntTests.a */; };
@@ -89,6 +90,8 @@
 		6B80671A1C54075C00572346 /* StoreTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StoreTableViewCell.h; path = Views/Cells/StoreTableViewCell.h; sourceTree = "<group>"; };
 		6B80671B1C54077400572346 /* StoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreTableViewCell.m; path = Views/Cells/StoreTableViewCell.m; sourceTree = "<group>"; };
 		6B80671D1C54192600572346 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6BBFA0331C54C02D000BB279 /* SendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendViewController.h; sourceTree = "<group>"; };
+		6BBFA0341C54C02D000BB279 /* SendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendViewController.m; sourceTree = "<group>"; };
 		6BF8EECC1C5445E2006D933C /* CheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckinViewController.m; path = ../CheckinViewController.m; sourceTree = "<group>"; };
 		6BF8EECE1C5445F4006D933C /* CheckinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CheckinViewController.h; path = ../CheckinViewController.h; sourceTree = "<group>"; };
 		6BF8EED11C545BEB006D933C /* StoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoresViewController.h; path = ../StoresViewController.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				6BF8EECE1C5445F4006D933C /* CheckinViewController.h */,
 				631C68141C5412220087C7EF /* MapViewController.h */,
 				631C68151C5412220087C7EF /* MapViewController.m */,
+				6BBFA0331C54C02D000BB279 /* SendViewController.h */,
+				6BBFA0341C54C02D000BB279 /* SendViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 				6B80671C1C54077400572346 /* StoreTableViewCell.m in Sources */,
 				631C682F1C5489570087C7EF /* LoginViewController.m in Sources */,
 				6B8067141C53F57500572346 /* AbstractModel.m in Sources */,
+				6BBFA0351C54C02D000BB279 /* SendViewController.m in Sources */,
 				631C68261C5474320087C7EF /* StoreAnnotationView.m in Sources */,
 				631C681F1C543E0F0087C7EF /* ExtendedError.m in Sources */,
 				631C68181C5412220087C7EF /* MapViewController.m in Sources */,
