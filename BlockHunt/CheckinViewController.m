@@ -9,15 +9,29 @@
 #import <Foundation/Foundation.h>
 #import "CheckinViewController.h"
 #import "QRCodeReaderViewController.h"
+#import "AppDelegate.h"
 
 @interface CheckinViewController ()
+@property (strong, nonatomic) IBOutlet UIImageView *storeImage;
+@property (strong, nonatomic) IBOutlet UILabel *successLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bountyAmount;
+@property (strong, nonatomic) IBOutlet UILabel *balanceAmount;
+@property (strong, nonatomic) IBOutlet UIView *checkinStatusView;
+@property (strong, nonatomic) IBOutlet UITabBarItem *checkinTab;
 
 @end
 
-@implementation CheckinViewController
+@implementation CheckinViewController 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self scan];
+	((AppDelegate*)[UIApplication sharedApplication].delegate).tabBarController.delegate = self;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+	if ([viewController isKindOfClass:[CheckinViewController class]]) {
+		self.checkinStatusView.hidden = YES;
+		[self scan];
+	}
 }
 
 - (void)scan {
@@ -34,6 +48,8 @@
 		
 		[vc setCompletionWithBlock:^(NSString *resultAsString) {
 			NSLog(@"Completion with result: %@", resultAsString);
+			
+			//send response to API, see here for example http://api.blockhunt.io/v1/stores/1/qrcode
 		}];
 		
 		[self presentViewController:vc animated:YES completion:NULL];
@@ -43,6 +59,7 @@
 		UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
 		[alert addAction:defaultAction];
 		[self presentViewController:alert animated:YES completion:nil];
+		self.checkinStatusView.hidden = YES;
 	}
 }
 
@@ -56,7 +73,7 @@
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result {
 	[self dismissViewControllerAnimated:YES completion:^{
 		UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"QRCodeReader" message:result preferredStyle:UIAlertControllerStyleAlert];
-		UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+		UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {self.checkinStatusView.hidden = false;}];
 		[alert addAction:defaultAction];
 		[self presentViewController:alert animated:YES completion:nil];
 	}];
@@ -64,6 +81,7 @@
 
 - (void)readerDidCancel:(QRCodeReaderViewController *)reader {
 	[self dismissViewControllerAnimated:YES completion:NULL];
+	self.checkinStatusView.hidden = true;
 }
 
 @end

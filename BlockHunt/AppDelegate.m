@@ -19,7 +19,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
@@ -29,6 +28,8 @@
 	[[LocationHelper sharedInstance] requestNewLocation];
     
     [self customizeAppearance];
+	
+	self.tabBarController = (UITabBarController *)self.window.rootViewController;
 
     return YES;
 }
