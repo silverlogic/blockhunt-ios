@@ -17,12 +17,22 @@
 
 @end
 
+/*
+ hunter/send-bitcoin
+ address: toAddress
+ amount: transferAmount
+ */
+
 @implementation SendViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.balanceAmount.text = [User currentUser].balanceAmount;
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	[[self view] endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
