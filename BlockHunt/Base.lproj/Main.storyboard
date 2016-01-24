@@ -410,6 +410,13 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bef-GG-z87" userLabel="fb button" customClass="FBSDKShareButton">
+                                        <rect key="frame" x="367" y="78" width="75" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="30" id="WEt-oL-Pqx"/>
+                                            <constraint firstAttribute="width" priority="750" constant="75" id="qTc-TI-4Xc"/>
+                                        </constraints>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Mfg-bU-cs8" secondAttribute="bottom" id="12M-rJ-U8h"/>
@@ -426,11 +433,14 @@
                                     <constraint firstAttribute="trailing" secondItem="Mfg-bU-cs8" secondAttribute="trailing" id="SXY-XK-6xo"/>
                                     <constraint firstItem="HQK-P3-uAA" firstAttribute="top" secondItem="4Dg-Yv-JuJ" secondAttribute="bottom" id="UQc-Tb-VTD"/>
                                     <constraint firstItem="Mfg-bU-cs8" firstAttribute="centerX" secondItem="Mee-hG-E6e" secondAttribute="centerX" id="Ybr-g6-lAX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bef-GG-z87" secondAttribute="trailing" constant="8" id="d5I-Hh-BJ8"/>
+                                    <constraint firstItem="4Dg-Yv-JuJ" firstAttribute="top" secondItem="Bef-GG-z87" secondAttribute="bottom" id="eW2-sM-5in"/>
                                     <constraint firstItem="2m2-Cc-OtL" firstAttribute="top" secondItem="Mee-hG-E6e" secondAttribute="top" constant="8" id="f0F-Jo-d0h"/>
                                     <constraint firstItem="Mfg-bU-cs8" firstAttribute="top" secondItem="HQK-P3-uAA" secondAttribute="bottom" id="qhd-pT-MWs"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="bountyAmount" destination="HQK-P3-uAA" id="hjY-nl-Ye3"/>
+                                    <outlet property="shareButton" destination="Bef-GG-z87" id="Nu9-C3-VwG"/>
                                     <outlet property="storeImageView" destination="2m2-Cc-OtL" id="krV-zU-727"/>
                                     <outlet property="successLabel" destination="4Dg-Yv-JuJ" id="pDh-5f-eSc"/>
                                 </connections>
