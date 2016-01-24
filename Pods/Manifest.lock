@@ -7,15 +7,18 @@ PODS:
   - KIF/Core (3.3.1)
   - Kiwi (2.4.0)
   - LocationHelper (0.0.1)
+  - QRCodeReaderViewController (4.0.1)
 
 DEPENDENCIES:
   - KIF-Kiwi
   - LocationHelper
+  - QRCodeReaderViewController
 
 SPEC CHECKSUMS:
   KIF: ff9f0e585503871bcd096937cc760081d770c5e2
   KIF-Kiwi: f0fd0488602bdc92fcb1908906ce9e2fa18f440e
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   LocationHelper: 8dfa83c66ae9ca7735b34dcb21a750a6e06d402a
+  QRCodeReaderViewController: 6538745c8f4ffa9407a26bd7f9489ea01739e7b0
 
 COCOAPODS: 0.38.2
