@@ -1,5 +1,7 @@
 # blockhunt-ios
 
+Note: This project was built by team [Silverlogic](https://tsl.io/) for a hackathon. Please e-mail us at info@tsl.io with any questions or suggestions. 
+
 ## Overview
 
 BlockHunt is bitcoin affiliate marketing in the real world.
