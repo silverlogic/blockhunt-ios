@@ -15,9 +15,8 @@ Users check into participating stores and receive bounties large or small (set b
 
 ## Hackathon Products
 
-[API Documentation](http://407e7b7e.ngrok.io/)
-[Django Admin](http://api.blockhunt.io/admin/login/?next=/admin/)
-_Credentials: admin@tsl.io / 1234_
+- [API Documentation](http://407e7b7e.ngrok.io/)
+- [Django Admin](http://api.blockhunt.io/admin/login/?next=/admin/) _Credentials: admin@tsl.io / 1234_
 
 [Marketing Page](http://blockhunt.io/landing/)
 
